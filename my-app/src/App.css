@@ -59,30 +59,59 @@
   color: white;
   margin: 30px;
   font-size: 20px;
+  font-family:'Abril Fatface';
   text-decoration: none;
 }
 
 .homebarlink{
+  font-family:'Abril Fatface';
   color: white;
   margin: 15px;
   font-size: 40px;
   text-decoration: none;
 }
 
+.bottombarlinks{
+  color: white;
+  margin: 30px;
+  font-size: 10px;
+  font-family:'Abril Fatface';
+  text-decoration: none;
+}
 
 .barlinks:hover{
   color: #616161;
 }
 
+.menu{
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: white
+}
+.mobileMenu{
+  display:none
+}
+.regularMenu{
+  display: flex;
+  flex-direction: row;
+}
 @media screen and (max-width:769px){
-  .mainbar{
+  .mobileMenu{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    justify-content: flex-start;
+    margin:auto
+
+  } 
+  .regularMenu{
+    display: none;
   }
-  
+
+  .menu{
+    display: block;
+  }
   
 }
 
