@@ -42,25 +42,22 @@
 */
 .mainbar{
   display: flex;
-  justify-content: left;
+  flex-direction: row;
   background:#0E1111;
   color: white
 }
 
-.bottombar{
-  display: flex;
-  justify-content: center;
-  font-size: 10px;
-  background: #0E1111;
-  color: white
-}
-
 .barlinks{
+
   color: white;
   margin: 30px;
   font-size: 20px;
   font-family:'Abril Fatface';
   text-decoration: none;
+}
+
+.barlinks:hover{
+  color: #616161;
 }
 
 .homebarlink{
@@ -71,18 +68,66 @@
   text-decoration: none;
 }
 
+/* Bottom bar */
+.bottombar{
+  display: flex;
+  justify-content: center;
+  background:#0E1111;
+  color: white;
+  
+}
+
+.some-page-wrapper {
+  margin: 15px;
+  
+ 
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  
+}
+
+.column {
+  display: flex;
+  justify-content: top;
+  margin-left: 20px;
+  width:300px;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+
 .bottombarlinks{
   color: white;
-  margin: 30px;
-  font-size: 10px;
+  font-size: 15px;
   font-family:'Abril Fatface';
   text-decoration: none;
 }
 
-.barlinks:hover{
-  color: #616161;
+.bottombarlinksbold{
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  font-family:'Abril Fatface';
+  text-decoration: none;
 }
 
+.copyright{
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  background: #0E1111;
+  color: white
+}
+
+
+
+/* Mobile menu*/
 .menu{
   display: none;
   background-color: transparent;
@@ -95,24 +140,6 @@
 .regularMenu{
   display: flex;
   flex-direction: row;
-}
-@media screen and (max-width:769px){
-  .mobileMenu{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin:auto
-
-  } 
-  .regularMenu{
-    display: none;
-  }
-
-  .menu{
-    display: block;
-  }
-  
 }
 
 /* Custom CSS*/
@@ -131,4 +158,36 @@
   color: #0E1111;
   font-weight: bold;
   font-size: 50px;
+}
+
+.libeccio{
+  height: 90%;
+  width: 60%;
+}
+
+.libecciolink{
+  border: none;
+  background: none;
+}
+
+@media screen and (max-width:769px){
+  .mobileMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:auto
+
+  } 
+  .regularMenu{
+    display: none;
+  }
+
+  .menu{
+    display: block;
+  }
+  .libeccio{
+    height: 100%;
+    width: 140%;
+  }
 }

@@ -11,7 +11,7 @@ function Home() {
     })
     return (
         <div className="App">
-        <p className='title'> Old Louisville</p>
+    
         <div className='animationLetters'>
           <p>Come to 
             <span className='wordChanging'> {typeEffect}</span>

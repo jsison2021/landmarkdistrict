@@ -6,9 +6,14 @@ import About from './Components/About';
 import Offices from './Components/Offices';
 import Residence from './Components/Residence';
 import Shops from './Components/Shops';
+import LeasingForm from './Components/LeasingForm';
+
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+
+import libeccio from './libeccio.png'
+
 import {
   BrowserRouter,
   Routes,
@@ -50,7 +55,7 @@ function MainNavbar() {
              <div className ='regularMenu'>
                 <Nav.Link className ="homebarlink" as = {Link} to = "/" >Landmark District</Nav.Link>
                 {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
-                {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residence</Nav.Link>}
+                {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
                 {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
                 {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
             </div>        
@@ -63,13 +68,38 @@ function MainNavbar() {
         <Route path = "/Offices" exact element = {<Offices/>}/>
         <Route path = "/Residence" exact element = {<Residence/>}/>
         <Route path = "/Shops" exact element = {<Shops/>}/>
+        <Route path = "/LeasingForm" exact element = {<LeasingForm/>}/>
         
 
         </Routes>
         
-        <Navbar fixed = "bottom" className = "bottombar" >
-        <p>© 2023 Landmark District All Rights Reserved</p>
-        <Nav.Link className ="barlinks" as = {Link} to = "/Contact" >Contact</Nav.Link>
+        <Navbar fixed = "bottom" className='bottombar'>
+        <div class='some-page-wrapper'>
+            <div class='row'>
+                <div class='column'>
+                    <div class='bottombarlinksbold'>
+                        Leasing Inquiries:      
+                    </div>
+                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/LeasingForm" >Residential</Nav.Link>
+                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/LeasingForm" >Office</Nav.Link>
+                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/LeasingForm" >Retail</Nav.Link>
+                </div>
+                <div class='column'>
+                   <Nav.Link className ="bottombarlinks" as = {Link} to = "/About" >About</Nav.Link>
+                   <Nav.Link className ="bottombarlinks" as = {Link} to = "/Contact" >Contact</Nav.Link>
+                </div>
+                <div class='column'>
+                    <button className='libecciolink'>
+                        <a href="https://libecciolimited.com/" target="_blank" rel="noreferrer" >
+                            <img src={libeccio} className = "libeccio" alt = "libeccio" />
+                        </a>
+                    </button>
+
+                </div>
+            </div>
+            
+        </div>
+        <p className='copyright'>© 2023 Landmark District All Rights Reserved</p>
         </Navbar>
 
         </BrowserRouter>
