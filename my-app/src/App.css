@@ -42,7 +42,7 @@
 */
 .mainbar{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   background:#0E1111;
   color: white
 }
@@ -57,9 +57,18 @@
 
 .barlinks{
   color: white;
-  margin: 15px;
+  margin: 30px;
+  font-size: 20px;
   text-decoration: none;
 }
+
+.homebarlink{
+  color: white;
+  margin: 15px;
+  font-size: 40px;
+  text-decoration: none;
+}
+
 
 .barlinks:hover{
   color: rgb(137, 237, 255);

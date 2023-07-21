@@ -28,7 +28,7 @@ function MainNavbar() {
     <BrowserRouter>
    
     <Navbar sticky = "top" className = "mainbar" >
-      <Nav.Link className ="barlinks" as = {Link} to = "/" >Home</Nav.Link>
+      <Nav.Link className ="homebarlink" as = {Link} to = "/" >Landmark District</Nav.Link>
       <Nav.Link className ="barlinks" as = {Link} to = "/Offices" >Offices</Nav.Link>
       <Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residence</Nav.Link>
       <Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>
