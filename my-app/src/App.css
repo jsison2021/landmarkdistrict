@@ -247,7 +247,8 @@
 
   .menu{
     display: inline-block;
-    margin: 20px;
+    margin: 0px;
+    padding: 0;
     font-size: 30px;
     
   }
