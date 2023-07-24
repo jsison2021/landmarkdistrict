@@ -99,10 +99,12 @@ function MainNavbar() {
                     </button>
 
                 </div>
+                <div class='column'>
+                    <p className='copyright'>© 2023 Landmark District All Rights Reserved</p>
+                </div>
             </div>
             
         </div>
-        <p className='copyright'>© 2023 Landmark District All Rights Reserved</p>
         </Navbar>
 
         </BrowserRouter>

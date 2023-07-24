@@ -202,13 +202,29 @@
     
   }
   .libeccio{
-    height: 200%;
-    width: 200%;
+    height: 75px;
+    width: 75px;
   }
   .landmark{
     
     height: 75px;
     width: 220px;
     border: none;
+  }
+  .column {
+    display: flex;
+    justify-content: top;
+    margin-left: 10px;
+    width:100px;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    
   }
 }
