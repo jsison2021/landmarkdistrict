@@ -305,5 +305,11 @@
     flex-basis: 100%;
     flex: 1;
   }
- 
+  .homebarlink{
+    font-family:'Abril Fatface';
+    color: white;
+    margin: 10px;
+    font-size: 40px;
+    text-decoration: none;
+  }
 }
