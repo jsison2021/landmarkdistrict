@@ -16,6 +16,7 @@ function Home() {
 
     if (!isLoaded) return<div>Loading...</div>
     return (
+      <div className='container'>
         <div className="App">
         <GoogleMap 
           zoom={10}
@@ -29,7 +30,7 @@ function Home() {
           </p>
          </div>
       </div>
-        
+      </div>
     );
 }
  

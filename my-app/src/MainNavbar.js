@@ -49,7 +49,16 @@ function MainNavbar() {
     
         <Navbar sticky = "top" className = "mainbar" >
             <div className='mobileMenu'>
-                <Nav.Link className ="homebarlink" as = {Link} to = "/" ><img src={landmark} className = "landmark" alt = "landmark" /><button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button></Nav.Link>
+            <div class='topRow'>
+                <div class='topColumn'>
+                <Nav.Link className ="homebarlink" as = {Link} to = "/" ><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+                </div>
+                <div class='topColumn'>
+                <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
+                </div>
+            </div>
+                
+                
                 {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Shops" onClick = {menuActive}>Shops</Nav.Link>}
                 {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Offices" onClick = {menuActive}>Offices</Nav.Link>}
                 {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Residence" onClick = {menuActive}>Residence</Nav.Link>}
@@ -61,8 +70,12 @@ function MainNavbar() {
                 {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
                 {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
                 {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
-            </div>        
+                
+            </div>
+            
         </Navbar>
+        
+        <button className='addressBar'>1148 S. 4th S</button>        
     
         <Routes>
         <Route path = "/" exact element = {<Home/>}/>
@@ -76,7 +89,7 @@ function MainNavbar() {
 
         </Routes>
         
-        <Navbar fixed = "bottom" className='bottombar'>
+        <Navbar sticky = "bottom" className='bottombar'>
         <div class='some-page-wrapper'>
             <div class='row'>
                 <div class='column'>
@@ -92,7 +105,7 @@ function MainNavbar() {
                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/Contact" >Contact</Nav.Link>
                 </div>
                 <div class='column'>
-                    <button className='libecciolink'>
+                    <button className='link'>
                         <a href="https://libecciolimited.com/" target="_blank" rel="noreferrer" >
                             <img src={libeccio} className = "libeccio" alt = "libeccio" />
                         </a>

@@ -1,9 +1,69 @@
 import React from 'react';
  
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAsterisk} from '@fortawesome/free-solid-svg-icons'
+
 function LeasingForm() {
 
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setlastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [message, setMessage] = useState("");
+
     return (
-       <p>LeasingForm</p>
+       <div className='container'>
+           <form >
+               <div>
+                    <label > First Name <FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                        <input 
+                        className='input'
+                        type="text" 
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        />
+                    </label>
+                    <label > Last Name<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                        <input 
+                        className='input'
+                        type="text" 
+                        value={lastName}
+                        onChange={(e) => setlastName(e.target.value)}
+                        />
+                    </label>
+                </div>
+                <div>
+                <label > Email Address<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                    <input 
+                    className='input'
+                    type="text" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
+                </label>
+                <label > Phone Number<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                    <input 
+                    className='input'
+                    type="text" 
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
+                </label>
+                </div>
+                <div>
+                <label > Message<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                    <input 
+                    className='input'
+                    type="text" 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    />
+                </label>
+                </div>
+                <input type="submit" />
+            </form>
+       </div>
         
     );
 }

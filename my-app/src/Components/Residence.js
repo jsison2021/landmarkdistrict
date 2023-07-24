@@ -3,8 +3,9 @@ import React from 'react';
 function Residence() {
 
     return (
-       <p>Residence</p>
-        
+        <div className='container'>
+            <p>Residence</p>
+        </div>
     );
 }
  
