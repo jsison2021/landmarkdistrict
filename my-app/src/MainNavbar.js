@@ -10,9 +10,10 @@ import LeasingForm from './Components/LeasingForm';
 
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faX} from '@fortawesome/free-solid-svg-icons'
 
 import libeccio from './libeccio.png'
+import landmark from './landmark.png'
 
 import {
   BrowserRouter,
@@ -29,15 +30,18 @@ import './App.css';
 
 
 function MainNavbar() {
-    const [menu, setMenu] = useState(false)
+    const [menu, setMenu] = useState(true)
+    const [symbol, setSymbol] = useState(faBars)
 
     let menuActive = () =>{
-       if (menu === false){
-           setMenu(true)
-       }
-       if (menu === true){
-           setMenu(false)
-       }
+        if (menu === false){
+            setMenu(true)
+            setSymbol(faBars)
+        }
+        if (menu === true){
+            setMenu(false)
+            setSymbol(faX)
+        }
     }
     return (
 
@@ -45,18 +49,17 @@ function MainNavbar() {
     
         <Navbar sticky = "top" className = "mainbar" >
             <div className='mobileMenu'>
-                <Nav.Link className ="homebarlink" as = {Link} to = "/" >Landmark District</Nav.Link>
-                <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={faBars} /></button>
+                <Nav.Link className ="homebarlink" as = {Link} to = "/" ><img src={landmark} className = "landmark" alt = "landmark" /><button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button></Nav.Link>
+                {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Shops" onClick = {menuActive}>Shops</Nav.Link>}
                 {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Offices" onClick = {menuActive}>Offices</Nav.Link>}
                 {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Residence" onClick = {menuActive}>Residence</Nav.Link>}
-                {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Shops" onClick = {menuActive}>Shops</Nav.Link>}
                 {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/About" onClick = {menuActive}>About</Nav.Link>}
             </div>
              <div className ='regularMenu'>
-                <Nav.Link className ="homebarlink" as = {Link} to = "/" >Landmark District</Nav.Link>
+                <Nav.Link className ="homebarlink" as = {Link} to = "/" > <img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+                {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
                 {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
                 {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
-                {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
                 {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
             </div>        
         </Navbar>

@@ -48,12 +48,15 @@
 }
 
 .barlinks{
-
+  
   color: white;
   margin: 30px;
-  font-size: 20px;
+  font-size: 25px;
   font-family:'Abril Fatface';
+  font-weight: bold;
   text-decoration: none;
+  
+  
 }
 
 .barlinks:hover{
@@ -107,6 +110,7 @@
   font-size: 15px;
   font-family:'Abril Fatface';
   text-decoration: none;
+ 
 }
 
 .bottombarlinksbold{
@@ -140,6 +144,7 @@
 .regularMenu{
   display: flex;
   flex-direction: row;
+
 }
 
 /* Custom CSS*/
@@ -170,13 +175,19 @@
   background: none;
 }
 
+.landmark{
+  height: 75px;
+  width: 300px;
+  border: none;
+}
+
 @media screen and (max-width:769px){
   .mobileMenu{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     margin:auto
+    
 
   } 
   .regularMenu{
@@ -184,7 +195,11 @@
   }
 
   .menu{
-    display: block;
+    display: inline-block;
+    margin: 20px;
+    font-size: 30px;
+    
+    
   }
   .libeccio{
     height: 100%;
