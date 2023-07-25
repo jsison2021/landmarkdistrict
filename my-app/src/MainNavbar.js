@@ -50,11 +50,11 @@ function MainNavbar() {
         <Navbar sticky = "top" className = "mainbar">
             <div >
                 <div className='mobileMenu'>
-                    <div class='topRow'>
-                        <div class='topColumn'>
+                    <div className='topRow'>
+                        <div className='topColumn'>
                         <Nav.Link className ="homebarlink" as = {Link} to = "/" onClick = {menuActive}><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
                         </div>
-                        <div class='topColumn'>
+                        <div className='topColumn'>
                         <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
                         </div>
                     </div>
@@ -92,21 +92,21 @@ function MainNavbar() {
         </Routes>
         
         <Navbar sticky = "bottom" className='bottombar'>
-        <div class='some-page-wrapper'>
-            <div class='row'>
-                <div class='column'>
-                    <div class='bottombarlinksbold'>
+        <div className ='some-page-wrapper'>
+            <div className='row'>
+                <div className='column'>
+                    <div className='bottombarlinksbold'>
                         Leasing Inquiries:      
                     </div>
                     <Nav.Link className ="bottombarlinks" as = {Link} to = "/LeasingForm" >Residential</Nav.Link>
                     <Nav.Link className ="bottombarlinks" as = {Link} to = "/LeasingForm" >Office</Nav.Link>
                     <Nav.Link className ="bottombarlinks" as = {Link} to = "/LeasingForm" >Retail</Nav.Link>
                 </div>
-                <div class='column'>
+                <div className='column'>
                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/About" >About</Nav.Link>
                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/Contact" >Contact</Nav.Link>
                 </div>
-                <div class='column'>
+                <div className='column'>
                     <button className='link'>
                         <a href="https://libecciolimited.com/" target="_blank" rel="noreferrer" >
                             <img src={libeccio} className = "libeccio" alt = "libeccio" />
@@ -114,7 +114,7 @@ function MainNavbar() {
                     </button>
 
                 </div>
-                <div class='column'>
+                <div className='column'>
                     <p className='copyright'>© 2023 Landmark District All Rights Reserved</p>
                 </div>
             </div>

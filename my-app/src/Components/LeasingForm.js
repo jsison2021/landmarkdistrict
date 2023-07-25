@@ -12,9 +12,13 @@ function LeasingForm() {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
 
+    let emailForm  = () =>{
+        console.log("form called")
+    }
     return (
-       <div className='container'>
-           <form >
+       <div >
+           <form className='form' >
+                <p className='leaseTitle'>Residential Leasing</p>
                <div className='formContainer'> 
                     <label className='labelFont'> First Name <FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
                         <input 
@@ -61,9 +65,11 @@ function LeasingForm() {
                     onChange={(e) => setMessage(e.target.value)}
                     />
                 </label>
+                
                 </div>
-                <input type="submit" />
+                <input className = "submitButton" type="submit" onSubmit = {emailForm}/>
             </form>
+            
        </div>
         
     );
