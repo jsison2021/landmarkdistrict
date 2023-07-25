@@ -10,7 +10,7 @@ import LeasingForm from './Components/LeasingForm';
 
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faX} from '@fortawesome/free-solid-svg-icons'
+import { faBars, faX, faLocationDot} from '@fortawesome/free-solid-svg-icons'
 
 import libeccio from './libeccio.png'
 import landmark from './landmark.png'
@@ -47,35 +47,37 @@ function MainNavbar() {
 
         <BrowserRouter>
     
-        <Navbar sticky = "top" className = "mainbar" >
-            <div className='mobileMenu'>
-            <div class='topRow'>
-                <div class='topColumn'>
-                <Nav.Link className ="homebarlink" as = {Link} to = "/" ><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+        <Navbar sticky = "top" className = "mainbar">
+            <div >
+                <div className='mobileMenu'>
+                    <div class='topRow'>
+                        <div class='topColumn'>
+                        <Nav.Link className ="homebarlink" as = {Link} to = "/" ><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+                        </div>
+                        <div class='topColumn'>
+                        <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
+                        </div>
+                    </div>
+                    
+                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Shops" onClick = {menuActive}>Shops</Nav.Link>}
+                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Offices" onClick = {menuActive}>Offices</Nav.Link>}
+                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Residence" onClick = {menuActive}>Residence</Nav.Link>}
+                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/About" onClick = {menuActive}>About</Nav.Link>}
                 </div>
-                <div class='topColumn'>
-                <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
+                <div className ='regularMenu'>
+                    <Nav.Link className ="homebarlink" as = {Link} to = "/" > <img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
+                    
                 </div>
-            </div>
-                
-                
-                {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Shops" onClick = {menuActive}>Shops</Nav.Link>}
-                {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Offices" onClick = {menuActive}>Offices</Nav.Link>}
-                {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Residence" onClick = {menuActive}>Residence</Nav.Link>}
-                {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/About" onClick = {menuActive}>About</Nav.Link>}
-            </div>
-             <div className ='regularMenu'>
-                <Nav.Link className ="homebarlink" as = {Link} to = "/" > <img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
-                {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
-                {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
-                {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
-                {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
-                
             </div>
             
         </Navbar>
-        
-        <button className='addressBar'>1148 S. 4th S</button>        
+     
+        <Nav.Link className ="addressBar" as = {Link} to = "/Contact" ><FontAwesomeIcon icon={faLocationDot} />  1148 S. 4th S</Nav.Link>
+            
     
         <Routes>
         <Route path = "/" exact element = {<Home/>}/>
