@@ -15,8 +15,8 @@ function LeasingForm() {
     return (
        <div className='container'>
            <form >
-               <div>
-                    <label > First Name <FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+               <div className='formContainer'> 
+                    <label className='labelFont'> First Name <FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
                         <input 
                         className='input'
                         type="text" 
@@ -24,7 +24,8 @@ function LeasingForm() {
                         onChange={(e) => setFirstName(e.target.value)}
                         />
                     </label>
-                    <label > Last Name<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                
+                    <label className='labelFont' > Last Name<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
                         <input 
                         className='input'
                         type="text" 
@@ -33,16 +34,16 @@ function LeasingForm() {
                         />
                     </label>
                 </div>
-                <div>
-                <label > Email Address<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
-                    <input 
-                    className='input'
-                    type="text" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    />
-                </label>
-                <label > Phone Number<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                <div  className='formContainer'> 
+                    <label className='labelFont' > Email Address<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                        <input 
+                        className='input'
+                        type="text" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </label>
+                <label className='labelFont' > Phone Number<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
                     <input 
                     className='input'
                     type="text" 
@@ -51,10 +52,10 @@ function LeasingForm() {
                     />
                 </label>
                 </div>
-                <div>
-                <label > Message<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
-                    <input 
-                    className='input'
+                <div className='formContainer'> 
+                <label className='labelFont' > Message<FontAwesomeIcon color = "red" size = "xs" icon={faAsterisk} />
+                    <textarea 
+                    className='messageFont'
                     type="text" 
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}

@@ -1,10 +1,18 @@
 import React from 'react';
- 
+import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
 function Residence() {
 
     return (
-        <div className='container'>
-            <p>Residence</p>
+        <div>
+            <div class='shopRow'>
+                <div class='shopColumn'>
+                    
+                </div>
+
+                <div class='shopColumn'>
+                    
+                </div>
+            </div>
         </div>
     );
 }

@@ -52,7 +52,7 @@ function MainNavbar() {
                 <div className='mobileMenu'>
                     <div class='topRow'>
                         <div class='topColumn'>
-                        <Nav.Link className ="homebarlink" as = {Link} to = "/" ><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+                        <Nav.Link className ="homebarlink" as = {Link} to = "/" onClick = {menuActive}><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
                         </div>
                         <div class='topColumn'>
                         <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>

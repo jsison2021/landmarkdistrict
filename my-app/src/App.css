@@ -194,6 +194,7 @@
   margin: 0px;
   padding: 0px 20%;
 }
+
 /* Pictures*/
 .libeccio{
   height: 90%;
@@ -219,26 +220,51 @@
 .shopPictures{
   height: 100px;
   width: 250px;
+  border-style: solid;
+  border-radius: 30px;
   margin-bottom:30px;
 }
 /* Forms */
+
+.formContainer{
+  justify-content: center;
+  text-align: center;
+}
 .form{
   border-style: solid;
   width: 200px;
   margin: 50px;
 }
 .input{
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.labelFont{
+  font-size: 20px;
+  font-family:'Abril Fatface';
+  margin: 20px;
+  text-align: left;
+}
+.messageFont{
   width: 100%;
   border-radius: 10px;
-}
+  border-style: solid;
+  margin: 10px;
+  text-align: top;
 
+}
+.map-container {
+  height: 100%;
+  width: 100%;
+}
 /* Shop CSS*/
 
 .shopContainer{
   border-style: none;
   padding: 20px;
   justify-content: center;
-  background-color: #F9F6EE;
+  background-color: #EEEEEE;
   border-radius: 25px;
   border-color: #0E1111;
   border-style: solid;
@@ -354,8 +380,14 @@
   .animationLetters{
     color: #616161;
     font-weight: bold;
-    font-size: 50px;
-    margin: 15px ;
+    font-size: 30px;
+    margin: 20px ;
+  }
+  .wordChanging{  
+    color: #0E1111;
+    font-weight: bold;
+    font-size: 30px;
+    
   }
   .slider{
     margin: 0px;

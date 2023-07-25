@@ -9,7 +9,7 @@ import image2 from './image2.jpeg'
 
 function Home() {
     const [typeEffect] = useTypewriter({
-      words: ['Shop','Work', 'Live'],
+      words: ['Shop...','Work...', 'Live...'],
       loop: {},
       typeSpeed: 200,
       deleteSpeed: 100
