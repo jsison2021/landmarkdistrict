@@ -12,7 +12,8 @@ function LeasingForm() {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
 
-    let emailForm  = () =>{
+    let emailForm  = (e) =>{
+        e.preventDefault();
         console.log("form called")
     }
     return (
