@@ -12,8 +12,8 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX, faLocationDot} from '@fortawesome/free-solid-svg-icons'
 
-import libeccio from './libeccio.png'
 import landmark from './landmark.png'
+import logo from './Logo.png'
 
 import {
   BrowserRouter,
@@ -51,6 +51,10 @@ function MainNavbar() {
             <div >
                 <div className='mobileMenu'>
                     <div className='topRow'>
+                    <div className='topColumn'>
+                    <img src={logo} className = "logo" alt = "logo" />
+                        </div>
+                    
                         <div className='topColumn'>
                         <Nav.Link className ="homebarlink" as = {Link} to = "/" onClick = {menuActive}><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
                         </div>
@@ -65,6 +69,7 @@ function MainNavbar() {
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/About" onClick = {menuActive}>About</Nav.Link>}
                 </div>
                 <div className ='regularMenu'>
+                    <img src={logo} className = "logo" alt = "logo" />
                     <Nav.Link className ="homebarlink" as = {Link} to = "/" > <img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
                     {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
                     {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
@@ -106,14 +111,7 @@ function MainNavbar() {
                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/About" >About</Nav.Link>
                    <Nav.Link className ="bottombarlinks" as = {Link} to = "/Contact" >Contact</Nav.Link>
                 </div>
-                <div className='column'>
-                    <button className='link'>
-                        <a href="https://libecciolimited.com/" target="_blank" rel="noreferrer" >
-                            <img src={libeccio} className = "libeccio" alt = "libeccio" />
-                        </a>
-                    </button>
-
-                </div>
+                
                 <div className='column'>
                     <p className='copyright'>© 2023 Landmark District All Rights Reserved</p>
                 </div>
