@@ -38,8 +38,8 @@
 }
 
 
-.barlinks:hover{
-  color: #616161;
+.barlinks:hover, .barlinks:active{
+  text-decoration: underline;
 }
 
 .homebarlink{
@@ -271,7 +271,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin: 50px;
+  margin: 30px;
   width: 300px;
   flex-direction: column;
   flex-basis: 100%;
@@ -336,12 +336,14 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    margin: 25px;
+    margin: 20px;
     width: 300px;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
   }
+
+  
   .topRow{
     display: flex;
     flex-direction: row;

@@ -25,6 +25,9 @@ function Offices() {
                 <div class='shopColumn'>
                     
                 </div>
+                <div class='shopColumn'>
+                       
+                </div>
             </div>
         </div>
         

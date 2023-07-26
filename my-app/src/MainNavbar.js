@@ -49,6 +49,15 @@ function MainNavbar() {
     
         <Navbar sticky = "top" className = "mainbar">
             <div >
+                <div className ='regularMenu'>
+                    <img src={logo} className = "logo" alt = "logo" />
+                    <Nav.Link className ="homebarlink" as = {Link} to = "/" > <img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
+                    
+                </div>
                 <div className='mobileMenu'>
                     <div className='topRow'>
                     <div className='topColumn'>
@@ -68,15 +77,7 @@ function MainNavbar() {
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Residence" onClick = {menuActive}>Residence</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/About" onClick = {menuActive}>About</Nav.Link>}
                 </div>
-                <div className ='regularMenu'>
-                    <img src={logo} className = "logo" alt = "logo" />
-                    <Nav.Link className ="homebarlink" as = {Link} to = "/" > <img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
-                    
-                </div>
+               
             </div>
             
         </Navbar>
