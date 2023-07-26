@@ -23,7 +23,7 @@
   width: 100%;
   border: none;
   background-color: #616161;
-  opacity: .6;
+  opacity: 1;
   text-align: center;
   color: #0E1111;
   font-weight: bold;
@@ -45,7 +45,7 @@
 .barlinks{
   color: white;
   margin: 30px;
-  font-size: 25px;
+  font-size: 20px;
   font-family:'Abril Fatface';
   font-weight: bold;
   text-decoration: none;
@@ -57,13 +57,40 @@
 .barlinks:hover, .barlinks:active{
   text-decoration: underline;
 }
+.topRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  
+}
+.topColumn-center{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0px 300px 0px 300px;
+  width: 300px;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;
+}
+.topColumn-right{
+  display: flex;
+  justify-content: right;
+  text-align: center;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;
+}
 
-.homebarlink{
-  font-family:'Abril Fatface';
-  color: white;
-  margin: 15px 15px 15px 0px;
-  font-size: 40px;
-  text-decoration: none;
+.topColumn-left{
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  margin: 0;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;
 }
 
 /* Bottom bar */
@@ -102,7 +129,7 @@
 
 .bottombarlinks{
   color: white;
-  font-size: 15px;
+  font-size: 10px;
   font-family:'Abril Fatface';
   text-decoration: none;
  
@@ -161,7 +188,7 @@
 .animationLetters{
   color: #616161;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 30px;
   margin: 10px 200px;
 }
 .category{
@@ -181,13 +208,14 @@
 }
 
 .contactTitle{
-  font-size: 50px;
+  font-size: 30px;
+  margin-top: 20px;
   color: #0E1111;
   text-align: center;
   font-weight: bold;
 }
 .contactInfo{
-  font-size: 20px;
+  font-size:15px;
   color: #0E1111;
   text-align: center;
   
@@ -203,7 +231,7 @@
 .wordChanging{  
   color: #0E1111;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 30px;
   
 }
 .slider{
@@ -254,14 +282,14 @@
 
 
 .leasingTitle{
-  font-size: 40px;
+  font-size: 30px;
   text-align: left;
   font-weight: bold;
   margin: 30px 0px 0px 0px;
 }
 
 .leasingInfo{
-  font-size: 20px;
+  font-size: 15px;
   margin: 30px 0px 30px 0px;
 }
 
@@ -313,7 +341,16 @@
   .regularMenu{
     display: none;
   }
-
+  .barlinks{
+    color: white;
+    margin: 30px;
+    font-size: 20px;
+    font-family:'Abril Fatface';
+    font-weight: bold;
+    text-decoration: none;
+    
+    
+  }
   .menu{
     display: inline-block;
     margin: 0px;

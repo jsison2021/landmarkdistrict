@@ -1,7 +1,6 @@
-
-
 import React from 'react'
 import { GoogleMap, useJsApiLoader,Marker } from '@react-google-maps/api';
+import Animation from './Animation'
 
 const containerStyle = {
     width: '100%',
@@ -21,20 +20,21 @@ function Contact() {
 
       return  (
         <div>
-        <p className='contactTitle'>Contact</p>
-        <p className='contactInfo'>Questions or comments, please give us a call at (502) 526-5276.</p>
-        <p className='directionsTitle'>Directions</p>
-        {isLoaded ? (
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={16}
-          
-        >
-          {  <Marker position={{ lat: 38.2363136426519, lng: -85.76134541349491 }} /> }
-          <></>
-        </GoogleMap>
-        ) : <p>Loading..</p>}
+          <Animation></Animation>
+          <p className='contactTitle'>Contact</p>
+          <p className='contactInfo'>Questions or comments, please give us a call at (502) 526-5276.</p>
+          <p className='directionsTitle'>Directions</p>
+          {isLoaded ? (
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={16}
+            
+          >
+            {  <Marker position={{ lat: 38.2363136426519, lng: -85.76134541349491 }} /> }
+            <></>
+          </GoogleMap>
+          ) : <p>Loading..</p>}
         </div>
     );
 }

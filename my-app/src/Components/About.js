@@ -1,9 +1,11 @@
 import React from 'react';
- 
-function About() {
+import Animation from './Animation'
 
+function About() {
     return (
-        <div className='container'>
+        
+        <div>
+            <Animation></Animation>
             <p className='title'> Welcome to Landmark District</p>
 
             <p className='aboutDesc'> Located in Old Louisville - Midpoint between Downtown and University of Louisville</p>

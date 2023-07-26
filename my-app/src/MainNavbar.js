@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home';
 import Contact from './Components/Contact';
@@ -11,11 +11,8 @@ import Parking from './Components/Parking';
 
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faX, faLocationDot} from '@fortawesome/free-solid-svg-icons'
-import { useAnimateGroup } from 'react-simple-animate';
+import { faBars, faX,} from '@fortawesome/free-solid-svg-icons'
 
-import logo from './Logo.png'
-import com from './com.png'
 
 import {
   BrowserRouter,
@@ -46,19 +43,7 @@ function MainNavbar() {
         }
     }
 
-    const items = [ <img src={logo} className = "logo" alt = "logo" />,"L", "a", "n", "d", "m","a", "r", "k", "D", "i", "s", "t","r", "i", "c", "t", <img src={com} className = "com" alt = "logo" />];
-    
-    const { styles, play, isPlaying } = useAnimateGroup({
-        sequences: items.map(() => ({
-          start: { opacity: 0, transform: "translateY(0)" },
-          end: { opacity: 1, transform: "translateY(0)" }
-      }))
-      
-    });
-    
-    useEffect(() => {
-      play(!isPlaying)
-    }, []);
+   
    
     return (
 
@@ -67,24 +52,30 @@ function MainNavbar() {
         <Navbar sticky = "top" className = "mainbar">
             <div >
                 <div className ='regularMenu'>
-                    
-                    <Nav.Link className ="barlinks" as = {Link} to = "/" > Home</Nav.Link>
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/Parking" >Parking</Nav.Link>}
-                    {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
-                    
+                    <div className='topRow'>
+                        <div className='topColumn-left'>
+                            <Nav.Link className ="barlinks" as = {Link} to = "/" > Home</Nav.Link>
+                        </div>
+                        <div className='topColumn-center'>
+                            {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
+                            {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
+                            {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
+                            {<Nav.Link className ="barlinks" as = {Link} to = "/Parking" >Parking</Nav.Link>}
+                        </div>
+                        <div className='topColumn-right'>
+                            {<Nav.Link className ="barlinks" as = {Link} to = "/Contact" >Contact</Nav.Link>}
+                        </div>
+                    </div>
                 </div>
                 <div className='mobileMenu'>
-                    <div className='topRow'>
+                    <div className='topRow'>  
                         <div className='topColumn'>
-                            </div>
-                        
-                            <div className='topColumn'>
-                        
-                            </div>
-                            <div className='topColumn'>
+                            
+                        </div>
+                        <div className='topColumn'>
+                           
+                        </div>
+                        <div className='topColumn'>
                             <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
                         </div>
                     </div>
@@ -93,22 +84,13 @@ function MainNavbar() {
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Offices" onClick = {menuActive}>Offices</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Residence" onClick = {menuActive}>Residence</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Parking" onClick = {menuActive}>Parking</Nav.Link>}
-                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/About" onClick = {menuActive}>About</Nav.Link>}
+                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Contact" onClick = {menuActive}>Contact</Nav.Link>}
                     
                 </div>
                
             </div>
             
         </Navbar>
-        <div className='animationBar'>
-        
-         {items.map((item, index) => (
-            <span key={item} style={styles[index]}>
-              <p className='landmarkAnimation'>{item}</p>
-            </span>
-          ))}
-          <Nav.Link className ="addressBar" as = {Link} to = "/Contact" ><FontAwesomeIcon icon={faLocationDot} />  1148 S. 4th S</Nav.Link>
-          </div>
         
             
     

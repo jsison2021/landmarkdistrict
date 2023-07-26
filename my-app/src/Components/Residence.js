@@ -1,9 +1,12 @@
 import React from 'react';
-import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
+
+import Animation from './Animation'
+
 function Residence() {
 
     return (
         <div>
+             <Animation></Animation>
             <div class='shopRow'>
                 <div class='shopColumn'>
                     

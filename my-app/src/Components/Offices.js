@@ -5,10 +5,13 @@ import anderson from './pictures/Anderson.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
+import Animation from './Animation'
+
 function Offices() {
 
     return (
         <div>
+            <Animation></Animation>
             <div class='shopRow'>
                 <div class='shopColumn'>
                     <div className='shopContainer'>
