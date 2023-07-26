@@ -13,8 +13,8 @@ function Animation() {
     
     const { styles, play, isPlaying } = useAnimateGroup({
         sequences: items.map(() => ({
-          start: { opacity: 0, transform: "translateY(0)" },
-          end: { opacity: 1, transform: "translateY(0)" }
+          start: {opacity: 0, transform: "translateY(0)"},
+          
       }))
       
     });
@@ -24,6 +24,7 @@ function Animation() {
     }, []);
 
     return (
+      <div>
         <div className='animationBar'>
                 {items.map((item, index) => (
                 <span key={item} style={styles[index]}>
@@ -32,6 +33,7 @@ function Animation() {
                 ))}
                 <Nav.Link className ="addressBar" as = {Link} to = "/Contact" ><FontAwesomeIcon icon={faLocationDot} />  1148 S. 4th S</Nav.Link>
         </div>
+      </div>
     )
 }
 export default Animation;
