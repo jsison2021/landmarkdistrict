@@ -1,14 +1,14 @@
 import React from 'react';
 
-import dreamlight from './Dreamlight.png'
-import bottled from './Bottled.png'
-import soulFood from './soulFood.png'
-import roofTop from './roofTop.png'
-import FlurDeTea from './FlurDeTea.png'
-import DollareGeneral_Logo from './DollareGeneral_Logo.png'
-import metro from './Metro.png'
-import coin from './coin.png'
-import homestore from './homestore.png'
+import dreamlight from './pictures/Dreamlight.png'
+import bottled from './pictures/Bottled.png'
+import soulFood from './pictures/soulFood.png'
+import roofTop from './pictures/roofTop.png'
+import FlurDeTea from './pictures/FlurDeTea.png'
+import DollareGeneral_Logo from './pictures/DollareGeneral_Logo.png'
+import metro from './pictures/Metro.png'
+import coin from './pictures/coin.png'
+import homestore from './pictures/homestore.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'

@@ -1,6 +1,6 @@
 import React from 'react';
  
-import anderson from './Anderson.png'
+import anderson from './pictures/Anderson.png'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

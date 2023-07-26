@@ -1,4 +1,4 @@
-
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Components/Home';
 import Contact from './Components/Contact';
@@ -7,13 +7,15 @@ import Offices from './Components/Offices';
 import Residence from './Components/Residence';
 import Shops from './Components/Shops';
 import LeasingForm from './Components/LeasingForm';
+import Parking from './Components/Parking';
 
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX, faLocationDot} from '@fortawesome/free-solid-svg-icons'
+import { useAnimateGroup } from 'react-simple-animate';
 
-import landmark from './landmark.png'
 import logo from './Logo.png'
+import com from './com.png'
 
 import {
   BrowserRouter,
@@ -43,6 +45,21 @@ function MainNavbar() {
             setSymbol(faX)
         }
     }
+
+    const items = [ <img src={logo} className = "logo" alt = "logo" />,"L", "a", "n", "d", "m","a", "r", "k", "D", "i", "s", "t","r", "i", "c", "t", <img src={com} className = "com" alt = "logo" />];
+    
+    const { styles, play, isPlaying } = useAnimateGroup({
+        sequences: items.map(() => ({
+          start: { opacity: 0, transform: "translateY(0)" },
+          end: { opacity: 1, transform: "translateY(0)" }
+      }))
+      
+    });
+    
+    useEffect(() => {
+      play(!isPlaying)
+    }, []);
+   
     return (
 
         <BrowserRouter>
@@ -50,50 +67,60 @@ function MainNavbar() {
         <Navbar sticky = "top" className = "mainbar">
             <div >
                 <div className ='regularMenu'>
-                    <img src={logo} className = "logo" alt = "logo" />
-                    <Nav.Link className ="homebarlink" as = {Link} to = "/" > <img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
+                    
+                    <Nav.Link className ="barlinks" as = {Link} to = "/" > Home</Nav.Link>
                     {<Nav.Link className ="barlinks" as = {Link} to = "/Shops" >Shops</Nav.Link>}
                     {<Nav.Link className ="barlinks" as = {Link} to = "/Offices">Offices</Nav.Link>}
                     {<Nav.Link className ="barlinks" as = {Link} to = "/Residence" >Residences</Nav.Link>}
+                    {<Nav.Link className ="barlinks" as = {Link} to = "/Parking" >Parking</Nav.Link>}
                     {<Nav.Link className ="barlinks" as = {Link} to = "/About" >About</Nav.Link>}
                     
                 </div>
                 <div className='mobileMenu'>
                     <div className='topRow'>
-                    <div className='topColumn'>
-                    <img src={logo} className = "logo" alt = "logo" />
-                        </div>
-                    
                         <div className='topColumn'>
-                        <Nav.Link className ="homebarlink" as = {Link} to = "/" onClick = {menuActive}><img src={landmark} className = "landmark" alt = "landmark" /></Nav.Link>
-                        </div>
-                        <div className='topColumn'>
-                        <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
+                            </div>
+                        
+                            <div className='topColumn'>
+                        
+                            </div>
+                            <div className='topColumn'>
+                            <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
                         </div>
                     </div>
-                    
+                    {menu ?  <Nav.Link></Nav.Link> :  <Nav.Link className ="barlinks" as = {Link} to = "/" onClick = {menuActive}> Home</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Shops" onClick = {menuActive}>Shops</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Offices" onClick = {menuActive}>Offices</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Residence" onClick = {menuActive}>Residence</Nav.Link>}
+                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/Parking" onClick = {menuActive}>Parking</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ="barlinks" as = {Link} to = "/About" onClick = {menuActive}>About</Nav.Link>}
+                    
                 </div>
                
             </div>
             
         </Navbar>
-     
-        <Nav.Link className ="addressBar" as = {Link} to = "/Contact" ><FontAwesomeIcon icon={faLocationDot} />  1148 S. 4th S</Nav.Link>
+        <div className='animationBar'>
+        
+         {items.map((item, index) => (
+            <span key={item} style={styles[index]}>
+              <p className='landmarkAnimation'>{item}</p>
+            </span>
+          ))}
+          <Nav.Link className ="addressBar" as = {Link} to = "/Contact" ><FontAwesomeIcon icon={faLocationDot} />  1148 S. 4th S</Nav.Link>
+          </div>
+        
             
     
         <Routes>
-        <Route path = "/" exact element = {<Home/>}/>
-        <Route path = "/Contact" exact element = {<Contact/>}/>
-        <Route path = "/About" exact element = {<About/>}/>
-        <Route path = "/Offices" exact element = {<Offices/>}/>
-        <Route path = "/Residence" exact element = {<Residence/>}/>
-        <Route path = "/Shops" exact element = {<Shops/>}/>
-        <Route path = "/LeasingForm" exact element = {<LeasingForm/>}/>
-        
+            <Route path = "/" exact element = {<Home/>}/>
+            <Route path = "/Contact" exact element = {<Contact/>}/>
+            <Route path = "/About" exact element = {<About/>}/>
+            <Route path = "/Offices" exact element = {<Offices/>}/>
+            <Route path = "/Residence" exact element = {<Residence/>}/>
+            <Route path = "/Shops" exact element = {<Shops/>}/>
+            <Route path = "/LeasingForm" exact element = {<LeasingForm/>}/>
+            <Route path = "/Parking" exact element = {<Parking/>}/>
 
         </Routes>
         
