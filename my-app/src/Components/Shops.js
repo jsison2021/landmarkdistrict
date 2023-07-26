@@ -11,11 +11,11 @@ import homestore from './pictures/homestore.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Animation from './Animation'
-
 function Shops() {
+   
 
     return (
         <div>

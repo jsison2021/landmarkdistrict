@@ -32,7 +32,9 @@ function Animation() {
                 </span>
                 ))}
                 <Nav.Link className ="addressBar" as = {Link} to = "/Contact" ><FontAwesomeIcon icon={faLocationDot} />  1148 S. 4th S</Nav.Link>
+                
         </div>
+        
       </div>
     )
 }

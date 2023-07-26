@@ -12,7 +12,7 @@ import Parking from './Components/Parking';
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX,} from '@fortawesome/free-solid-svg-icons'
-
+import  Animation from './Components/Animation'
 
 import {
   BrowserRouter,
@@ -48,7 +48,12 @@ function MainNavbar() {
     return (
 
         <BrowserRouter>
-    
+        
+        <Routes>
+            <Route path = "/" exact element = {<Animation/>}/>
+
+        </Routes>
+        {/* 
         <Navbar sticky = "top" className = "mainbar">
             <div >
                 <div className ='regularMenu'>
@@ -129,7 +134,7 @@ function MainNavbar() {
             
         </div>
         </Navbar>
-
+        */}
         </BrowserRouter>
 
         
