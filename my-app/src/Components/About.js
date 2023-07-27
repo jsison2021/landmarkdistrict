@@ -10,7 +10,7 @@ function About() {
             <div className='container'>
                 <motion.div  className='title'
                     inital = {{x: 0}}
-                    animate = {{x: "25%"}}
+                    animate = {{x: "27%"}}
                     transition = {{
                         duration: "3",
                         delay: "0.5"
