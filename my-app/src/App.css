@@ -4,15 +4,9 @@
 }
 .container{
   height: 600px;
-  
+  justify-content: left;
 }
-.box {
-  display: block;
-  width: 100px;
-  height: 100px;
-  background: #27253f;
-  border-radius: 10px;
-}
+
 /*
   Navbar
 */
@@ -205,11 +199,12 @@
   font-size: 40px;
   font-weight: bold;
   color: #0E1111;
-  text-align: center
+ 
 }
 
 .aboutDesc{
   color: #0E1111;
+  justify-content: left;
   text-align: center;
   font-size: 20px;
 }
@@ -387,6 +382,26 @@
     
 
   } 
+  .aboutDesc{
+    color: #0E1111;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+  }
+  .title{
+    margin-top: 40px;
+    text-align: center;
+    margin-right: 115px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #0E1111;
+   
+  }
+  .container{
+    height: 600px;
+    width: 100%;
+    justify-content: left;
+  }
   .regularMenu{
     display: none;
   }
@@ -452,7 +467,7 @@
     border-width: 5px;
     margin:20px
   }
-  
+
   .topRow{
     display: flex;
     flex-direction: row;
