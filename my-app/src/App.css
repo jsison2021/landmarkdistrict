@@ -334,11 +334,11 @@
   padding: 10px;
   justify-content: center;
   background-color: #EEEEEE;
-  border-radius: 10px;
+  border-radius: 5px;
   border-width: 5px;
   margin:40px;
   --c: #0E1111; /* the border color */
-  --b: 10px;    /* the border thickness*/
+  --b: 5px;    /* the border thickness*/
   --g: 5px;     /* the gap on hover */
   
   padding: calc(var(--g) + var(--b));
@@ -462,7 +462,7 @@
     padding: 10px;
     justify-content: center;
     background-color: #EEEEEE;
-    border-radius: 15px;
+    border-radius: 5px;
 
     border-width: 5px;
     margin:20px
