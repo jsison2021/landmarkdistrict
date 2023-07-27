@@ -143,7 +143,7 @@ function MainNavbar() {
                             {<Nav.Link className = {barstyle5} as = {Link} onClick = {activeLink5} to = "/Parking" >Parking</Nav.Link>}
                         </div>
                         <div className='topColumn-right'>
-                            {<Nav.Link className = {barstyle6} as = {Link} onClick = {activeLink6} to = "/Contact" >Contact</Nav.Link>}
+                            {<Nav.Link className = {barstyle6} as = {Link} onClick = {activeLink6} to = "/About" >About</Nav.Link>}
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@ function MainNavbar() {
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle3} as = {Link} to = "/Offices" onClick = {() => {activeLink3();menuActive();}}>Offices</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle4} as = {Link} to = "/Residence" onClick = {() => {activeLink4();menuActive();}}>Residence</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle5}as = {Link} to = "/Parking" onClick = {() => {activeLink5();menuActive();}}>Parking</Nav.Link>}
-                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle6} as = {Link} to = "/Contact" onClick = {() => {activeLink6();menuActive();}}>Contact</Nav.Link>}
+                    {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle6} as = {Link} to = "/About" onClick = {() => {activeLink6();menuActive();}}>About</Nav.Link>}
                     
                 </div>
                
