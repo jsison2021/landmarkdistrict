@@ -373,7 +373,7 @@
   flex: 1;
 }
 
-@media screen and (max-width:769px){
+@media screen and (max-width:1150px){
   .mobileMenu{
     display: flex;
     flex-direction: column;
