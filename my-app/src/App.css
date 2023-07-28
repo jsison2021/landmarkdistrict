@@ -370,7 +370,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   } 
 
   .menu{
@@ -534,5 +534,14 @@
     font-family:'Abril Fatface';
     color: white;
 
+  }
+  .barlinks2{
+    color: #0E1111;
+    margin: 15px 15px 15px 50px;
+    font-size: 20px;
+    font-family:'Abril Fatface';
+    font-weight: bold;
+    text-decoration: overline;
+  
   }
 }
