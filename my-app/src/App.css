@@ -16,7 +16,7 @@
   justify-content: center;
   width: 100%;
   flex-direction: row;
-  background:#616161;
+  background:#C0C0C0;
   color: #0E1111
 
 }
@@ -332,29 +332,22 @@
   border-style: none;
   padding: 10px;
   justify-content: center;
-  background-color: #EEEEEE;
   border-radius: 5px;
   border-width: 5px;
   margin:40px;
-  --c: #0E1111; /* the border color */
-  --b: 5px;    /* the border thickness*/
-  --g: 5px;     /* the gap on hover */
-  
-  padding: calc(var(--g) + var(--b));
-  --_g: #0000 25%,var(--c) 0;
-  background: 
-    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g))
-     var(--_i,200%) 0  /200% var(--_i,var(--b))  no-repeat,
-    conic-gradient(            at bottom var(--b) left  var(--b),var(--_g))
-     0   var(--_i,200%)/var(--_i,var(--b)) 200%  no-repeat;
-  transition: .3s, background-position .3s .3s;
-  cursor: pointer;
   
 }
-.shopContainer:hover {
-  --_i: 100%;
-  transition: .3s, background-size .3s .3s;
+.shopContainer:hover{
+  border-style: none;
+  padding: 10px;
+  justify-content: center;
+  background-color: #C0C0C0;
+  border-radius: 5px;
+  border-width: 5px;
+  margin:40px;
+  
 }
+
 .shopRow {
   display: flex;
   flex-direction: row;
@@ -374,15 +367,12 @@
 
 @media screen and (max-width:1150px){
   .mobileMenu{
-    
     display: flex;
     width: 100%;
     flex-direction: column;
     text-align: center;
-  
   } 
 
-  
   .menuButton{
     display: flex;
     border: none;
@@ -407,6 +397,7 @@
     font-size: 20px;
     color: #0E1111;
   }
+
   .aboutDesc{
     color: #0E1111;
     justify-content: center;
@@ -421,12 +412,12 @@
     font-size: 30px;
     font-weight: bold;
     color: #0E1111;
-   
   }
   
   .regularMenu{
     display: none;
   }
+
   .barlinks{
     color: #0E1111;
     margin: 30px;
@@ -434,10 +425,7 @@
     font-family:'Abril Fatface';
     font-weight: bold;
     text-decoration: none;
-    
-    
   }
-
 
   .logo{
     display: inline-block;
@@ -456,6 +444,7 @@
     flex-basis: 100%;
     flex: 1;
   }
+
   .row {
     display: flex;
     flex-direction: row;
@@ -471,17 +460,6 @@
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
-  }
-
-  .shopContainer{
-    border-style: none;
-    padding: 10px;
-    justify-content: center;
-    background-color: #EEEEEE;
-    border-radius: 5px;
-
-    border-width: 5px;
-    margin:20px
   }
 
   .topRow{
@@ -545,5 +523,10 @@
     padding: 0px;
     height: 40vh
   }
- 
+  .landmarkAnimation2{
+    display: inline;
+    font-family:'Abril Fatface';
+    color: white;
+
+  }
 }
