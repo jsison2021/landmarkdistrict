@@ -1,5 +1,5 @@
 import React from 'react';
-import Animation from './Animation'
+import Animation from './pageAnimations/Animation'
 import {motion} from 'framer-motion'
 
 function About() {

@@ -13,7 +13,6 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faX,} from '@fortawesome/free-solid-svg-icons'
 
-
 import {
   BrowserRouter,
   Routes,
@@ -130,46 +129,34 @@ function MainNavbar() {
         */}
         
         <Navbar sticky = "top" className = "mainbar">
-            <div >
-                <div className ='regularMenu'>
-                    <div className='topRow'>
-                        <div className='topColumn-left'>
-                            <Nav.Link className = {barstyle1} as = {Link} onClick = {activeLink1} to = "/" > Home</Nav.Link>
-                        </div>
-                        <div className='topColumn-center'>
-                            {<Nav.Link className = {barstyle2} as = {Link} onClick = {activeLink2} to = "/Shops" >Shops</Nav.Link>}
-                            {<Nav.Link className = {barstyle3} as = {Link} onClick = {activeLink3} to = "/Offices">Offices</Nav.Link>}
-                            {<Nav.Link className = {barstyle4} as = {Link} onClick = {activeLink4} to = "/Residence" >Residences</Nav.Link>}
-                            {<Nav.Link className = {barstyle5} as = {Link} onClick = {activeLink5} to = "/Parking" >Parking</Nav.Link>}
-                        </div>
-                        <div className='topColumn-right'>
-                            {<Nav.Link className = {barstyle6} as = {Link} onClick = {activeLink6} to = "/About" >About</Nav.Link>}
-                        </div>
+            <div className ='regularMenu'>
+                <div className='topRow'>
+                    <div className='topColumn-left'>
+                        <Nav.Link className = {barstyle1} as = {Link} onClick = {activeLink1} to = "/" > Home</Nav.Link>
+                    </div>
+                    <div className='topColumn-center'>
+                        {<Nav.Link className = {barstyle2} as = {Link} onClick = {activeLink2} to = "/Shops" >Shops</Nav.Link>}
+                        {<Nav.Link className = {barstyle3} as = {Link} onClick = {activeLink3} to = "/Offices">Offices</Nav.Link>}
+                        {<Nav.Link className = {barstyle4} as = {Link} onClick = {activeLink4} to = "/Residence" >Residences</Nav.Link>}
+                        {<Nav.Link className = {barstyle5} as = {Link} onClick = {activeLink5} to = "/Parking" >Parking</Nav.Link>}
+                    </div>
+                    <div className='topColumn-right'>
+                        {<Nav.Link className = {barstyle6} as = {Link} onClick = {activeLink6} to = "/About" >About</Nav.Link>}
                     </div>
                 </div>
-                <div className='mobileMenu'>
-                    <div className='topRow'>  
-                        <div className='topColumn'>
-                            
-                        </div>
-                        <div className='topColumn'>
-                           
-                        </div>
-                        <div className='topColumn'>
-                            <button className='menu' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
-                        </div>
-                    </div>
+            </div>
+            <div className='mobileMenu'>
+              
+                <button className='menuButton' onClick={menuActive}>  <p className='menuDesc'>Menu</p><FontAwesomeIcon icon={symbol} /></button>
+                <div className='menu'>
                     {menu ?  <Nav.Link></Nav.Link> :  <Nav.Link className ={barstyle1} as = {Link} to = "/" onClick = {() => {activeLink1();menuActive();}}> Home</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle2} as = {Link} to = "/Shops" onClick = {() => {activeLink2();menuActive();}}>Shops</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle3} as = {Link} to = "/Offices" onClick = {() => {activeLink3();menuActive();}}>Offices</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle4} as = {Link} to = "/Residence" onClick = {() => {activeLink4();menuActive();}}>Residence</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle5}as = {Link} to = "/Parking" onClick = {() => {activeLink5();menuActive();}}>Parking</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle6} as = {Link} to = "/About" onClick = {() => {activeLink6();menuActive();}}>About</Nav.Link>}
-                    
                 </div>
-               
             </div>
-            
         </Navbar>
         
             

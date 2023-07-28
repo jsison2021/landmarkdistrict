@@ -1,6 +1,6 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader,Marker } from '@react-google-maps/api';
-import Animation from './Animation'
+import Animation from './pageAnimations/Animation'
 
 const containerStyle = {
     width: '100%',

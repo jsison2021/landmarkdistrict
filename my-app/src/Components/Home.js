@@ -8,26 +8,16 @@ import { useAnimateGroup } from 'react-simple-animate';
 import image1 from './pictures/image1.jpeg'
 import image2 from './pictures/image2.jpeg'
 
-import Animation from './Animation'
+import Animation from './pageAnimations/Animation'
+import HomeAnimation from './pageAnimations/HomeAnimation'
 
 function Home() {
-    const [typeEffect] = useTypewriter({
-      words: ['Shop...','Work...', 'Live...'],
-      loop: {},
-      typeSpeed: 200,
-      deleteSpeed: 100
-    })
-
+   
     return (
       <div>
-           <Animation></Animation>
-          <div className='animationLetters'>
-            <p>Come to 
-              <span className='wordChanging'> {typeEffect}</span>
-              <span><Cursor cursorStyle = ' '  ></Cursor></span>
-            </p>
-           
-          </div>
+          <Animation></Animation>
+          <HomeAnimation></HomeAnimation>
+          
           
           
           {/*

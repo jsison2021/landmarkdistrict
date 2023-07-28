@@ -1,22 +1,17 @@
 import React from 'react';
-import Animation from './Animation'
+import Animation from './pageAnimations/Animation'
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import ParkingAnimation from './pageAnimations/ParkingAnimation'
 
 function Parking() {
 
-    return (
-        <div>
-            <Animation></Animation>
-            <div class='shopRow'>
-                <div class='shopColumn'>
-                    
-                </div>
-
-                <div class='shopColumn'>
-                    
-                </div>
-            </div>
-        </div>
-    );
+  return (
+   <div>
+      <Animation></Animation>
+      <ParkingAnimation></ParkingAnimation>
+   </div>
+  );
 }
  
 export default Parking;

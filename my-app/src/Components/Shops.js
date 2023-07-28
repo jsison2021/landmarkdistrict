@@ -13,13 +13,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect } from 'react';
 
-import Animation from './Animation'
+import Animation from './pageAnimations/Animation'
+import ShopsAnimation from './pageAnimations/ShopsAnimation'
 function Shops() {
    
 
     return (
         <div>
             <Animation></Animation>
+            <ShopsAnimation></ShopsAnimation>
             <div class='shopRow'>
                 <div class='shopColumn'>
                     <div className='shopContainer'>
