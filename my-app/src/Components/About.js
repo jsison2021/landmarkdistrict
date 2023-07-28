@@ -1,8 +1,13 @@
 import React from 'react';
 import Animation from './pageAnimations/Animation'
 import {motion} from 'framer-motion'
-
+import { useEffect } from "react";
 function About() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+       
+      }, []);
     return (
         
         <div>

@@ -1,8 +1,12 @@
 import React from 'react';
 import Animation from './pageAnimations/Animation'
+import { useEffect } from "react";
 
 function LeasingForm() {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+       
+      }, []);
     return (
        <div>
             <Animation></Animation>

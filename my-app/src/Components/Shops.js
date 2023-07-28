@@ -17,7 +17,10 @@ import Animation from './pageAnimations/Animation'
 import ShopsAnimation from './pageAnimations/ShopsAnimation'
 function Shops() {
    
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+       
+      }, []);
     return (
         <div>
             <Animation></Animation>

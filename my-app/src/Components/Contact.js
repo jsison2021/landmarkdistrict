@@ -1,6 +1,7 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader,Marker } from '@react-google-maps/api';
 import Animation from './pageAnimations/Animation'
+import { useEffect } from "react";
 
 const containerStyle = {
     width: '100%',
@@ -17,6 +18,11 @@ function Contact() {
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyAewvSSykXCJCtug3_cJm7WBIe90iGJdNk"
       })
+
+      useEffect(() => {
+        window.scrollTo(0, 0);
+       
+      }, []);
 
       return  (
         <div>

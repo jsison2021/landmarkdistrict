@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import {useTypewriter, Cursor} from 'react-simple-typewriter'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -12,7 +11,10 @@ import Animation from './pageAnimations/Animation'
 import HomeAnimation from './pageAnimations/HomeAnimation'
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
    
+  }, []);
     return (
       <div>
           <Animation></Animation>

@@ -6,10 +6,13 @@ import anderson from './pictures/Anderson.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
 import Animation from './pageAnimations/Animation'
-
+import { useEffect } from "react";
 import OfficesAnimation from './pageAnimations/OfficesAnimation'
 function Offices() {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+       
+      }, []);
     return (
         <div>
             <Animation></Animation>
