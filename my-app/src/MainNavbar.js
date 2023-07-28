@@ -146,8 +146,10 @@ function MainNavbar() {
                 </div>
             </div>
             <div className='mobileMenu'>
-              
-                <button className='menuButton' onClick={menuActive}>  <p className='menuDesc'>Menu</p><FontAwesomeIcon icon={symbol} /></button>
+                <div className='menuDiv'>
+                    <p className='menuDesc'>Menu</p>
+                    <button className='menuButton' onClick={menuActive}><FontAwesomeIcon icon={symbol} /></button>
+                </div>
                 <div className='menu'>
                     {menu ?  <Nav.Link></Nav.Link> :  <Nav.Link className ={barstyle1} as = {Link} to = "/" onClick = {() => {activeLink1();menuActive();}}> Home</Nav.Link>}
                     {menu ?  <Nav.Link></Nav.Link> : <Nav.Link className ={barstyle2} as = {Link} to = "/Shops" onClick = {() => {activeLink2();menuActive();}}>Shops</Nav.Link>}

@@ -373,29 +373,35 @@
     text-align: center;
   } 
 
+  .menu{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
   .menuButton{
     display: flex;
     border: none;
     background-color: transparent;
-    margin: 10px 10px 10px 0px;
+    margin: 12px 20px 10px 0px;
     justify-content: right;
-    font-size: 25px;
+    font-size: 15px;
     color: #0E1111;
-  }
-
-  .menu{
-    display: flex;
-    flex-direction: column;
-   
   }
 
   .menuDesc{
     display: flex;
     font-family:'Abril Fatface';
-    margin: 0px 10px 10px 0px;
+    margin: 5px 0px 0px 0px;
     font-weight: bold;
     font-size: 20px;
     color: #0E1111;
+  }
+
+  .menuDiv{
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
   }
 
   .aboutDesc{
