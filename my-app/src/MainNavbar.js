@@ -85,7 +85,7 @@ function MainNavbar() {
     }
    
     let activeLink4 = () =>{
-        if (barstyle2 === "barlinks" ){
+        if (barstyle4 === "barlinks" ){
             setBarStyle1("barlinks")
             setBarStyle2("barlinks")
             setBarStyle3("barlinks")
