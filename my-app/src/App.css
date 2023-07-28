@@ -189,7 +189,7 @@
   display: none;
   background-color: transparent;
   border: none;
-  color: white
+  
 }
 .mobileMenu{
   display:none
@@ -424,14 +424,6 @@
     display: none;
   }
 
-  .barlinks{
-    color: #0E1111;
-    margin: 30px;
-    font-size: 20px;
-    font-family:'Abril Fatface';
-    font-weight: bold;
-    text-decoration: none;
-  }
 
   .logo{
     display: inline-block;
@@ -543,5 +535,25 @@
     font-weight: bold;
     text-decoration: overline;
   
+  }
+  .barlinks::before {
+    content: "";
+    display: block;
+    width: 15%;
+    height: 2px;
+    background-color: #0E1111;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .barlinks{
+    color: #0E1111;
+    margin: 30px;
+    font-size: 20px;
+    font-family:'Abril Fatface';
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .barlinks:hover::before {
+    transform: scaleX(1);
   }
 }
