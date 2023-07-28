@@ -69,9 +69,20 @@ function Animation() {
                 >
                 <motion.line
                     className="lineAnimation"
-                    x1="220"
+                    x1="300"
                     y1="0"
                     x2="380"
+                    y2="0"
+                    stroke-width = "2px"
+                    stroke="white"
+                    variants={draw}
+                    custom={2}
+                />
+                <motion.line
+                    className="lineAnimation"
+                    x1="300"
+                    y1="0"
+                    x2="220"
                     y2="0"
                     stroke-width = "2px"
                     stroke="white"
