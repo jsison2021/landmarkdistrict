@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import { useAnimateGroup } from 'react-simple-animate';
 
 import logo from '../pictures/Logo.png' 
-import com from '../pictures/com.png'
 
 function Animation() {
-    const items = [ <img src={logo} className = "logo" alt = "logo" />,"Land","mark","District", <img src={com} className = "com" alt = "logo" />];
+    const items = [ <img src={logo} className = "logo" alt = "logo" />,"Landmark","District", <p className='dot'>.com</p>];
 
     const { styles, play, isPlaying } = useAnimateGroup({
         sequences: items.map(() => ({

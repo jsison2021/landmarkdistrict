@@ -11,7 +11,7 @@ function LeasingForm() {
        <div>
             <Animation></Animation>
             <p className='leasingTitle'>Leasing Information</p>
-            <p className='leasingInfo'>For leasing inquiries, please email josephimpellizzeri@gmail.com </p>
+            <p className='leasingInfo'>For leasing inquiries, please email contact@landmarkdistrict.com </p>
        </div>
         
     );

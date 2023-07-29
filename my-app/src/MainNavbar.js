@@ -8,6 +8,7 @@ import Residence from './Components/Residence';
 import Shops from './Components/Shops';
 import LeasingForm from './Components/LeasingForm';
 import Parking from './Components/Parking';
+import Animation from './Components/pageAnimations/Animation'
 
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -121,13 +122,13 @@ function MainNavbar() {
     return (
 
         <BrowserRouter>
-        {/* 
+
         <Routes>
             <Route path = "/" exact element = {<Animation/>}/>
 
         </Routes>
-        */}
-        
+
+        {/** 
         <Navbar sticky = "top" className = "mainbar">
             <div className ='regularMenu'>
                 <div className='topRow'>
@@ -198,7 +199,7 @@ function MainNavbar() {
             
         </div>
         </Navbar>
-        
+        */}
         </BrowserRouter>
 
         
