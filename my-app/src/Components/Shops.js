@@ -25,6 +25,39 @@ function Shops() {
         <div>
             <Animation></Animation>
             <ShopsAnimation></ShopsAnimation>
+            <div className='row'>
+                <div className='col-sm-4'>
+                    <div className='shopContainer'>
+                        <div className='pictureContainer'>
+                            <img src={bottled} className = "shopPictures" alt = "shopPictures" />
+                        </div>
+                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 412 W Oak St, Louisville, KY 40203</p>    
+                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink"href = "https://bottledliquors.com/">https://bottledliquors.com/</a></p>
+                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 526-5030</p>
+                    </div>
+                </div>
+                <div className='col-sm-4'>
+                    <div className='shopContainer'>
+                        <div className='pictureContainer'>
+                            <img src={coin} className = "shopPictures" alt = "shopPictures" />
+                        </div>
+                        <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 401 W Oak St, Louisville, KY 40203</p>    
+                        <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.caribbeancoinlaundry.com/">www.caribbeancoinlaundry.com/</a></p>
+                        <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> 502-654-7871</p>
+                    </div>
+                </div>
+                <div className='col-sm-4'>
+                    <div className='shopContainer'>
+                        <div className='pictureContainer'>
+                            <img src={DollareGeneral_Logo} className = "shopPictures" alt = "shopPictures" />
+                        </div>
+                        <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 418 W Oak St, Louisville, KY 40203</p>    
+                        <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.dollargeneral.com/">https://www.dollargeneral.com/</a></p>
+                        <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 665-0698</p>
+                    </div>
+                </div>
+            </div>
+            {/** 
             <div class='shopRow'>
                 <div class='shopColumn'>
                     <div className='shopContainer'>
@@ -110,7 +143,7 @@ function Shops() {
                     </div>
                 </div>
             </div>
-            
+            */}
         </div>
 
         
