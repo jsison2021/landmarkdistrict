@@ -20,7 +20,7 @@ const draw = {
   
 function ShopsAnimation() {
     
-    const items = [ "Shops"," and"," Restaurants"];
+    const items = [ "Shops"," & ","Restaurants"];
 
     const draw = {
         hidden: { pathLength: 0, opacity: 0 },
