@@ -17,23 +17,25 @@ function Offices() {
         <div>
             <Animation></Animation>
             <OfficesAnimation></OfficesAnimation>
-            <div class='shopRow'>
-                <div class='shopColumn'>
+            <div className='row'>
+                <div className='col-sm-4'>
                     <div className='shopContainer'>
-                    <img src={anderson} className = "shopPictures" alt = "shopPictures" />
+                        <div className='pictureContainer'>
+                            <img src={anderson} className = "shopPictures" alt = "shopPictures" />
+                        </div>
                         <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 1205 S 3rd St, Louisville, KY 40203</p>    
                         <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /></p>
-                        <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 637-3335</p>
+                        <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 637-3335</p>      
                     </div>
                 </div>
-
-                <div class='shopColumn'>
+                <div className='col-sm-4'>
                     
                 </div>
-                <div class='shopColumn'>
-                       
+                <div className='col-sm-4'>
+                    
                 </div>
             </div>
+            
         </div>
         
         

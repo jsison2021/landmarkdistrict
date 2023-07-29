@@ -26,7 +26,7 @@ function Shops() {
             <Animation></Animation>
             <ShopsAnimation></ShopsAnimation>
             <div className='row'>
-                <div className='col-sm-4'>
+                <div className='col-md-4'>
                     <div className='shopContainer'>
                         <div className='pictureContainer'>
                             <img src={bottled} className = "shopPictures" alt = "shopPictures" />
@@ -36,7 +36,7 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 526-5030</p>
                     </div>
                 </div>
-                <div className='col-sm-4'>
+                <div className='col-md-4'>
                     <div className='shopContainer'>
                         <div className='pictureContainer'>
                             <img src={coin} className = "shopPictures" alt = "shopPictures" />
@@ -46,7 +46,7 @@ function Shops() {
                         <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> 502-654-7871</p>
                     </div>
                 </div>
-                <div className='col-sm-4'>
+                <div className='col-md-4'>
                     <div className='shopContainer'>
                         <div className='pictureContainer'>
                             <img src={DollareGeneral_Logo} className = "shopPictures" alt = "shopPictures" />
