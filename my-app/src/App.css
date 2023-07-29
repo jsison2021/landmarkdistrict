@@ -338,7 +338,9 @@
   border-style: solid;
   border-radius: 30px;
 }
-
+.shopPage{
+  padding: 20px 80px 0px 80px;
+}
 
 @media screen and (max-width:769px){
   .mobileMenu{
@@ -536,10 +538,7 @@
     margin: 40px 15px 40px 15px;
     border-radius: 5px;
     border-width: 5px;
-    border-style: solid;
-  
-  
-    
+
   }
   .pictureContainer{
     display: inline-block;
@@ -558,5 +557,8 @@
     font-size: 13px;
     font-family:'Abril Fatface';
     text-decoration: none;
+  }
+  .shopPage{
+    padding: 20px;
   }
 }
