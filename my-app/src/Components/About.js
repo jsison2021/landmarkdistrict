@@ -13,38 +13,30 @@ function About() {
         <div>
             <Animation></Animation>
             <div className='container'>
-                <motion.div  className='title'
-                    inital = {{x: 0}}
-                    animate = {{x: "27%"}}
-                    transition = {{
-                        duration: "3",
-                        delay: "0.5"
-                    }}
+                <motion.div  
+                    className='title'
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1 }}
                 >
 
                 Welcome to Landmark District
                 </motion.div>
                 
                 <motion.div  className='aboutDesc'
-                    inital = {{x: 0}}
-                    animate = {{ x: "2.5%"}}
-                    transition = {{
-                        duration: "3",
-                        delay: "0.5"
-                    }}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1 }}
                 >
 
                 Located in Old Louisville - Midpoint between Downtown and University of Louisville
-                
+               
                 </motion.div>
 
                 <motion.div  className='aboutDesc'
-                    inital = {{x: 0}}
-                    animate = {{x: "2.5%"}}
-                    transition = {{
-                        duration: "3",
-                        delay: "0.5"
-                    }}
+                   initial={{ opacity: 0, scale: 0.5 }}
+                   animate={{ opacity: 1, scale: 1 }}
+                   transition={{ duration: 1 }}
                 >
                      Enjoy the shops and resturants as you explore the history of Louisville
                 </motion.div>

@@ -197,6 +197,7 @@
 /* Custom CSS*/
 
 .title{
+  text-align: center;
   margin-top: 40px;
   font-size: 40px;
   font-weight: bold;

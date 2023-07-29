@@ -8,6 +8,7 @@ import DollareGeneral_Logo from './pictures/DollareGeneral_Logo.png'
 import metro from './pictures/Metro.png'
 import coin from './pictures/coin.png'
 import homestore from './pictures/homestore.png'
+import {motion} from 'framer-motion'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
@@ -28,6 +29,12 @@ function Shops() {
             <div className='shopPage'>
                 <div className='row'>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={bottled} className = "shopPictures" alt = "shopPictures" />
@@ -36,8 +43,15 @@ function Shops() {
                                 <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink"href = "https://bottledliquors.com/">https://bottledliquors.com/</a></p>
                                 <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 526-5030</p>
                         </div>
+                        </motion.div>
                     </div>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={coin} className = "shopPictures" alt = "shopPictures" />
@@ -46,8 +60,15 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.caribbeancoinlaundry.com/">www.caribbeancoinlaundry.com/</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> 502-654-7871</p>
                         </div>
+                        </motion.div>
                     </div>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={DollareGeneral_Logo} className = "shopPictures" alt = "shopPictures" />
@@ -56,10 +77,17 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.dollargeneral.com/">https://www.dollargeneral.com/</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 665-0698</p>
                         </div>
+                        </motion.div>
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={dreamlight} className = "shopPictures" alt = "shopPictures" />
@@ -68,8 +96,15 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.facebook.com/jcdreamlight/">www.facebook.com/jcdreamlight/</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 314-1117</p>
                         </div>
+                        </motion.div>
                     </div>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={FlurDeTea} className = "shopPictures" alt = "shopPictures" />
@@ -78,8 +113,15 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.fleurdetea.store/">https://www.fleurdetea.store//</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 742-9561</p>
                         </div>
+                        </motion.div>
                     </div>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={homestore} className = "shopPictures" alt = "shopPictures" />
@@ -88,10 +130,18 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://homecenterky.com/">https://homecenterky.com/</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 384-5385</p>
                         </div>
+                        </motion.div>
+                        
                     </div>
                 </div>
                 <div className='row'>
                     <div className='col-md-4'>
+                         <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={metro} className = "shopPictures" alt = "shopPictures" />
@@ -100,8 +150,15 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.metrobyt-mobile.com/">www.metrobyt-mobile.com/</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 618-2287</p>
                         </div>
+                        </motion.div>
                     </div>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={roofTop} className = "shopPictures" alt = "shopPictures" />
@@ -110,8 +167,15 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.facebook.com/rooftopgrillky/">www.facebook.com/rooftopgrillky/</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 618-2287</p>
                         </div>
+                        </motion.div>
                     </div>
                     <div className='col-md-4'>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: false }}
+                        >
                         <div className='shopContainer'>
                             <div className='pictureContainer'>
                                 <img src={soulFood} className = "shopPictures" alt = "shopPictures" />
@@ -120,6 +184,7 @@ function Shops() {
                             <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.facebook.com/1DOLLARJUST1DOLLAR/">www.facebook.com/</a></p>
                             <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 963-1719</p>
                         </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
