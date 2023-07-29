@@ -122,13 +122,13 @@ function MainNavbar() {
     return (
 
         <BrowserRouter>
-
+        {/* 
         <Routes>
             <Route path = "/" exact element = {<Animation/>}/>
 
         </Routes>
-
-        {/** 
+        */}
+        
         <Navbar sticky = "top" className = "mainbar">
             <div className ='regularMenu'>
                 <div className='topRow'>
@@ -199,7 +199,7 @@ function MainNavbar() {
             
         </div>
         </Navbar>
-        */}
+        
         </BrowserRouter>
 
         

@@ -5,7 +5,7 @@ import { useAnimateGroup } from 'react-simple-animate';
 import logo from '../pictures/Logo.png' 
 
 function Animation() {
-    const items = [ <img src={logo} className = "logo" alt = "logo" />,"Landmark","District", <p className='dot'>.com</p>];
+    const items = [ <img src={logo} className = "logo" alt = "logo" />,"Land","mark","District", <p className='dot'>.com</p>];
 
     const { styles, play, isPlaying } = useAnimateGroup({
         sequences: items.map(() => ({
