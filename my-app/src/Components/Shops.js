@@ -31,7 +31,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -48,7 +48,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -65,7 +65,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -84,7 +84,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -101,7 +101,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -118,7 +118,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -138,7 +138,7 @@ function Shops() {
                     <div className='col-md-4'>
                          <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -155,7 +155,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
@@ -172,7 +172,7 @@ function Shops() {
                     <div className='col-md-4'>
                         <motion.div
                             initial={{ opacity: 0 }}
-                            transition={{ duration: 1.5 }}
+                            transition={{ duration: 2 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: false }}
                         >
