@@ -1,0 +1,62 @@
+/* Scroll Indicator (Dot Navigation) */
+.scroll-indicator {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.scroll-dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--color-black);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
+}
+
+.scroll-dot:hover {
+  transform: scale(1.2);
+  background: var(--color-gray);
+}
+
+.scroll-dot.active {
+  background: var(--color-black);
+  transform: scale(1.5);
+}
+
+/* Tooltip on hover */
+.scroll-dot::before {
+  content: attr(title);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.scroll-dot:hover::before {
+  opacity: 1;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}

@@ -1,0 +1,122 @@
+.offices-section {
+  background: var(--color-white);
+}
+
+.offices-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.office-card {
+  background: var(--color-white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.office-card.featured {
+  border: 2px solid var(--color-light-gray);
+}
+
+.office-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.office-logo-container {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: transparent;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.office-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.office-name {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  margin-bottom: 20px;
+  color: var(--color-black);
+}
+
+.office-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.office-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: var(--text-base);
+  color: var(--color-slate);
+}
+
+.office-cta {
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-text {
+  font-size: var(--text-base);
+  color: var(--color-slate);
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-size: var(--text-sm);
+  transition: background 0.2s ease;
+  border-radius: 4px;
+}
+
+.cta-button:hover {
+  background: var(--color-charcoal);
+}
+
+@media (max-width: 1024px) {
+  .offices-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .offices-content {
+    grid-template-columns: 1fr;
+  }
+
+  .office-card {
+    padding: 30px 20px;
+  }
+}

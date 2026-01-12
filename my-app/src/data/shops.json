@@ -1,0 +1,85 @@
+{
+  "shops": [
+    {
+      "id": "bottled-liquors",
+      "name": "Bottled Liquors",
+      "logo": "/assets/tenant-logos/Bottled.png",
+      "address": "412 W Oak St, Louisville, KY 40203",
+      "website": "https://bottledliquors.com/",
+      "phone": "(502) 526-5030",
+      "category": "retail"
+    },
+    {
+      "id": "caribbean-coin-laundry",
+      "name": "Caribbean Coin Laundry",
+      "logo": "/assets/tenant-logos/coin.png",
+      "address": "401 W Oak St, Louisville, KY 40203",
+      "website": "https://www.caribbeancoinlaundry.com/",
+      "phone": "502-654-7871",
+      "category": "service"
+    },
+    {
+      "id": "dollar-general",
+      "name": "Dollar General",
+      "logo": "/assets/tenant-logos/DollareGeneral_Logo.png",
+      "address": "418 W Oak St, Louisville, KY 40203",
+      "website": "https://www.dollargeneral.com/",
+      "phone": "(502) 665-0698",
+      "category": "retail"
+    },
+    {
+      "id": "jc-dreamlight",
+      "name": "JC Dreamlight",
+      "logo": "/assets/tenant-logos/Dreamlight.png",
+      "address": "1201 S 3rd St, Louisville, KY 40203",
+      "website": "https://www.facebook.com/jcdreamlight/",
+      "phone": "(502) 314-1117",
+      "category": "retail"
+    },
+    {
+      "id": "fleur-de-tea",
+      "name": "Fleur de Tea",
+      "logo": "/assets/tenant-logos/FlurDeTea.png",
+      "address": "1212 S. 4th St. Suite 100 Louisville, KY 40203",
+      "website": "https://www.fleurdetea.store/",
+      "phone": "(502) 742-9561",
+      "category": "food-beverage"
+    },
+    {
+      "id": "home-center",
+      "name": "Home Center",
+      "logo": "/assets/tenant-logos/homestore.png",
+      "address": "1148 S 4th St, Louisville, KY 40203",
+      "website": "https://homecenterky.com/",
+      "phone": "(502) 384-5385",
+      "category": "retail"
+    },
+    {
+      "id": "metro-by-tmobile",
+      "name": "Metro by T-Mobile",
+      "logo": "/assets/tenant-logos/Metro.png",
+      "address": "403 W Oak St Louisville, KY 40203",
+      "website": "https://www.metrobyt-mobile.com/",
+      "phone": "(502) 618-2287",
+      "category": "retail"
+    },
+    {
+      "id": "rooftop-grill",
+      "name": "Rooftop Grill",
+      "logo": "/assets/tenant-logos/roofTop.png",
+      "address": "414 W Oak Street Louisville, KY 40203",
+      "website": "https://www.facebook.com/rooftopgrillky/",
+      "phone": "(502) 618-2287",
+      "category": "food-beverage"
+    },
+    {
+      "id": "soul-food-restaurant",
+      "name": "Soul Food Restaurant",
+      "logo": "/assets/tenant-logos/soulFood.png",
+      "address": "418 W Oak St, Louisville, KY 40203",
+      "website": "https://www.facebook.com/1DOLLARJUST1DOLLAR/",
+      "phone": "(502) 963-1719",
+      "category": "food-beverage"
+    }
+  ]
+}
