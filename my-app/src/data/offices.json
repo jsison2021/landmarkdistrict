@@ -1,0 +1,13 @@
+{
+  "offices": [
+    {
+      "id": "anderson-office",
+      "name": "Anderson Office",
+      "logo": "/assets/tenant-logos/Anderson.png",
+      "address": "1205 S 3rd St, Louisville, KY 40203",
+      "website": null,
+      "phone": "(502) 637-3335",
+      "category": "office"
+    }
+  ]
+}
