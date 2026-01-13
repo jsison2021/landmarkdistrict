@@ -4,10 +4,19 @@
       "id": "beauteous-nail",
       "name": "Beauteous Nail",
       "logo": "/assets/tenant-logos/nails.png",
-      "address": "325-327 W Oak St, Louisville, KY 40203",
+      "address": "325 W Oak St, Louisville, KY 40203",
       "website": "https://app.acuityscheduling.com/schedule/e8105012",
-      "phone": null,
+      "phone": "(502) 500-2236",
       "category": "service"
+    },
+    {
+      "id": "bluegrass-bebe",
+      "name": "Bluegrass Bebe",
+      "logo": "/assets/tenant-logos/bluegrass.png",
+      "address": "315 W Oak St, Louisville, KY 40203",
+      "website": "https://bluegrassbebe.com/about/",
+      "phone": null,
+      "category": "retail"
     },
     {
       "id": "bottled",
@@ -23,7 +32,7 @@
       "name": "Caribbean Laundry",
       "logo": "/assets/tenant-logos/coin.png",
       "address": "401 W Oak St, Louisville, KY 40203",
-      "website": null,
+      "website": "https://www.caribbeancoinlaundry.com/locations/401-w-oak-st-louisville-ky/",
       "phone": "502-654-7871",
       "category": "service"
     },
@@ -32,7 +41,7 @@
       "name": "Dollar General",
       "logo": "/assets/tenant-logos/DollareGeneral_Logo.png",
       "address": "409 W Oak St, Louisville, KY 40203",
-      "website": "https://www.dollargeneral.com/",
+      "website": "https://www.dollargeneral.com/store-directory/ky/louisville/22716",
       "phone": "(502) 665-0698",
       "category": "retail"
     },
@@ -42,7 +51,7 @@
       "logo": "/assets/tenant-logos/Dreamlight.png",
       "address": "1201 S 3rd St, Louisville, KY 40203",
       "website": null,
-      "phone": null,
+      "phone": "(502) 314-1117",
       "category": "retail"
     },
     {
@@ -50,8 +59,8 @@
       "name": "Elixir",
       "logo": "/assets/tenant-logos/Elixir.png",
       "address": "414 W Oak St, Louisville, KY 40203",
-      "website": "https://www.elixirteahouse.com/",
-      "phone": null,
+      "website": "https://www.elixirbarlou.com/",
+      "phone": "(502) 384-2428",
       "category": "food-beverage"
     },
     {
@@ -73,11 +82,20 @@
       "category": "retail"
     },
     {
+      "id": "lavish",
+      "name": "Lavish",
+      "logo": "/assets/tenant-logos/lavish.png",
+      "address": "1151 S 4th St, Louisville, KY 40203",
+      "website": "https://www.lavishtraining-academy.com/contact-8",
+      "phone": "(502) 594-1819",
+      "category": "retail"
+    },
+    {
       "id": "metro-pcs",
       "name": "Metro PCS",
       "logo": "/assets/tenant-logos/Metro.png",
       "address": "403 W Oak St, Louisville, KY 40203",
-      "website": null,
+      "website": "https://www.metrobyt-mobile.com/stores/bd/metro-by-t-mobile-louisville-ky-10211252/",
       "phone": "(502) 618-2287",
       "category": "retail"
     },
@@ -96,7 +114,7 @@
       "logo": "/assets/tenant-logos/PizzaKing.png",
       "address": "416 W Oak St, Louisville, KY 40203",
       "website": "https://pizzarestaurantlouisville.com/",
-      "phone": null,
+      "phone": "(502) 706-4739",
       "category": "food-beverage"
     },
     {
@@ -105,16 +123,16 @@
       "logo": "/assets/tenant-logos/southernexpress.png",
       "address": "418 W Oak St, Louisville, KY 40203",
       "website": "https://www.facebook.com/1DOLLARJUST1DOLLAR/",
-      "phone": null,
+      "phone": "(502) 963-1719",
       "category": "food-beverage"
     },
     {
       "id": "taste-of-china",
       "name": "Taste of China",
       "logo": "/assets/tenant-logos/tasteofchina.png",
-      "address": "1167 S 4th St / 333 W Oak St, Louisville, KY 40203",
+      "address": "1167 S 4th St, Louisville, KY 40203",
       "website": "https://tasteofchinalouisville.3menucities.com/catalog.aspx?cid=1#",
-      "phone": null,
+      "phone": "(502) 585-5582",
       "category": "food-beverage"
     },
     {
@@ -131,8 +149,8 @@
       "name": "Zoe's Tattoo",
       "logo": "/assets/tenant-logos/download.jpeg",
       "address": "1161 S 4th St, Louisville, KY 40203",
-      "website": null,
-      "phone": null,
+      "website": "https://www.zoestattoos.com/",
+      "phone": "502-468-6704",
       "category": "service"
     }
   ]

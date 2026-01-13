@@ -16,7 +16,7 @@ function ShopsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">SHOPS</h2>
+          <h2 className="section-title">SHOPS & RESTAURANTS</h2>
           <p className="section-subtitle">Curated retail experiences in the heart of Old Louisville</p>
         </motion.div>
 

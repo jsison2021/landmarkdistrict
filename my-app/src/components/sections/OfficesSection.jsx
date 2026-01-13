@@ -66,9 +66,16 @@ function OfficesSection() {
                 <div className="office-meta">
                   <div className="office-address">{office.address}</div>
                   <div className="office-actions">
-                    <a href={`tel:${office.phone}`} className="office-link">
-                      {office.phone}
-                    </a>
+                    {office.website && (
+                      <a href={office.website} target="_blank" rel="noopener noreferrer" className="office-link office-website">
+                        WEBSITE →
+                      </a>
+                    )}
+                    {office.phone && (
+                      <a href={`tel:${office.phone}`} className="office-link">
+                        {office.phone}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

@@ -36,9 +36,8 @@ function LocationSection() {
         >
           <h2 className="location-title">LOCATION</h2>
           <h3 className="location-neighborhood">{location.neighborhood}</h3>
-          <p className="location-address">{location.address}</p>
           <p className="location-description">
-            Midpoint between Downtown Louisville and University of Louisville.
+            Located at the corner of 4th and Oak, midpoint between Downtown Louisville and University of Louisville.
             Experience the historic charm of Old Louisville.
           </p>
           <a

@@ -5,7 +5,7 @@
       "name": "Anderson & Vaughn",
       "logo": "/assets/tenant-logos/Anderson.png",
       "address": "1205 S 3rd St, Louisville, KY 40203",
-      "website": null,
+      "website": "https://www.502injured.com/",
       "phone": "(502) 637-3335",
       "category": "office"
     },
@@ -14,8 +14,8 @@
       "name": "Liberty Bank",
       "logo": "/assets/tenant-logos/libertybank.png",
       "address": "1200 S 4th St, Louisville, KY 40203",
-      "website": "https://www.libertybank.net/",
-      "phone": null,
+      "website": "https://www.libertybank.net/locations/ky/louisville/4th-street",
+      "phone": "(502) 778-7000",
       "category": "office"
     }
   ]

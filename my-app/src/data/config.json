@@ -1,15 +1,15 @@
 {
   "contact": {
-    "phone": "(502) 526-5276",
-    "email": "contact@landmarkdistrict.com"
+    "phone": null,
+    "email": null
   },
   "location": {
     "coordinates": {
-      "lat": 38.23585,
-      "lng": -85.76141
+      "lat": 38.235,
+      "lng": -85.7603667
     },
     "googleMapsApiKey": "AIzaSyAewvSSykXCJCtug3_cJm7WBIe90iGJdNk",
-    "address": "4th & Oak St, Louisville, KY 40203",
+    "address": "1167 S 4th St, Louisville, KY 40203",
     "neighborhood": "Old Louisville"
   },
   "about": {

@@ -44,20 +44,24 @@ function ContactSection() {
         >
           <h2 className="section-title contact-title">GET IN TOUCH</h2>
 
-          <div className="contact-info-grid">
-            <div className="contact-info-item">
-              <span className="contact-icon">📞</span>
-              <a href={`tel:${contact.phone}`} className="contact-link">
-                {contact.phone}
-              </a>
+          {(contact.phone || contact.email) && (
+            <div className="contact-info-grid">
+              {contact.phone && (
+                <div className="contact-info-item">
+                  <a href={`tel:${contact.phone}`} className="contact-link">
+                    {contact.phone}
+                  </a>
+                </div>
+              )}
+              {contact.email && (
+                <div className="contact-info-item">
+                  <a href={`mailto:${contact.email}`} className="contact-link">
+                    {contact.email}
+                  </a>
+                </div>
+              )}
             </div>
-            <div className="contact-info-item">
-              <span className="contact-icon">✉️</span>
-              <a href={`mailto:${contact.email}`} className="contact-link">
-                {contact.email}
-              </a>
-            </div>
-          </div>
+          )}
 
           {!submitted ? (
             <form onSubmit={handleSubmit} className="contact-form">

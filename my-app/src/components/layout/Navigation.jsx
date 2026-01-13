@@ -3,7 +3,7 @@ import './Navigation.css';
 
 const navItems = [
   { id: 'hero', label: 'Home' },
-  { id: 'shops', label: 'Shops' },
+  { id: 'shops', label: 'Shops & Restaurants' },
   { id: 'offices', label: 'Offices' },
   { id: 'residences', label: 'Residences' },
   { id: 'location', label: 'Location' },
