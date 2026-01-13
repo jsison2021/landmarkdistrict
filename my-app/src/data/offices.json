@@ -17,6 +17,15 @@
       "website": "https://www.libertybank.net/locations/ky/louisville/4th-street",
       "phone": "(502) 778-7000",
       "category": "office"
+    },
+    {
+      "id": "uofl",
+      "name": "University of Louisville",
+      "logo": "/assets/tenant-logos/uofl.png",
+      "address": "1212 S 4th St 101, Louisville, KY 40203",
+      "website": "https://louisville.edu/",
+      "phone": null,
+      "category": "office"
     }
   ]
 }
