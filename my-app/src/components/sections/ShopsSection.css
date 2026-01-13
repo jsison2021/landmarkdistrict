@@ -215,21 +215,29 @@
     text-align: center;
   }
 
+  /* Disable purple hover effects on mobile */
   .shop-item::before {
-    left: 50%;
-    transform: translateX(-50%) scaleY(0);
-    width: 60%;
-    height: 2px;
-    top: auto;
-    bottom: -1px;
-  }
-
-  .shop-item:hover::before {
-    transform: translateX(-50%) scaleX(1);
+    display: none;
   }
 
   .shop-item:hover {
-    transform: translateX(0);
+    transform: none;
+  }
+
+  .shop-item:hover .shop-number {
+    color: #cbd5e1;
+  }
+
+  .shop-item:hover .shop-logo-frame {
+    transform: none;
+  }
+
+  .shop-link:hover {
+    color: #1a1a1a;
+  }
+
+  .shop-link::after {
+    display: none;
   }
 
   .shop-number {

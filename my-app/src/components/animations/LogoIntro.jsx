@@ -58,8 +58,8 @@ function LogoIntro({ onComplete }) {
                 ease: [0.4, 0, 0.2, 1],
               }}
             />
-            <motion.h1
-              className="logo-intro-text"
+            <motion.div
+              className="logo-intro-text-wrapper"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -68,8 +68,9 @@ function LogoIntro({ onComplete }) {
                 ease: [0.4, 0, 0.2, 1],
               }}
             >
-              LANDMARK DISTRICT
-            </motion.h1>
+              <span className="logo-intro-prefix">Shops at</span>
+              <h1 className="logo-intro-text">LANDMARK DISTRICT</h1>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

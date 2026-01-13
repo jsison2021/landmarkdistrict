@@ -42,6 +42,9 @@ function HeroSection() {
         animate="visible"
       >
         <motion.h1 className="hero-headline" variants={itemVariants}>
+          {about.headlinePrefix && (
+            <span className="hero-headline-prefix">{about.headlinePrefix}</span>
+          )}
           {about.headline}
         </motion.h1>
         <motion.p className="hero-tagline" variants={itemVariants}>

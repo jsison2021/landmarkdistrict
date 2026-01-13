@@ -34,7 +34,10 @@ function Navigation({ scrollToSection, sections }) {
         <div className="nav-container">
           <div className="nav-brand">
             <img src="/assets/tenant-logos/logo.png" alt="Landmark District" className="nav-logo" />
-            <span className="nav-brand-text">LANDMARK DISTRICT</span>
+            <div className="nav-brand-text-wrapper">
+              <span className="nav-brand-prefix">Shops at</span>
+              <span className="nav-brand-text">LANDMARK DISTRICT</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

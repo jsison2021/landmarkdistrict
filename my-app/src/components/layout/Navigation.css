@@ -41,12 +41,29 @@
   filter: brightness(0) saturate(100%);
 }
 
+.nav-brand-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-brand-prefix {
+  font-family: var(--font-heading);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #64748b;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
 .nav-brand-text {
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   color: var(--color-black);
+  line-height: 1;
 }
 
 /* Desktop Navigation */
@@ -186,6 +203,10 @@
 
   .nav-logo {
     height: 40px;
+  }
+
+  .nav-brand-prefix {
+    font-size: 8px;
   }
 
   .nav-brand-text {

@@ -53,7 +53,16 @@ function OfficesSection() {
               </div>
 
               <div className="office-info">
-                <h3 className="office-name">{office.name}</h3>
+                <h3 className="office-name">
+                  {office.namePrefix ? (
+                    <>
+                      <span className="office-name-prefix">{office.namePrefix}</span>{' '}
+                      <span className="office-name-main">{office.nameMain}</span>
+                    </>
+                  ) : (
+                    office.name
+                  )}
+                </h3>
                 <div className="office-meta">
                   <div className="office-address">{office.address}</div>
                   <div className="office-actions">

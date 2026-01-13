@@ -137,6 +137,20 @@
   margin: 0;
 }
 
+.office-name-prefix {
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.office-name-main {
+  display: block;
+}
+
 .office-meta {
   display: flex;
   flex-direction: column;
@@ -234,18 +248,29 @@
   z-index: 0;
 }
 
-.cta-button::after {
-  content: '\2192';
+.cta-button span {
   position: relative;
   z-index: 1;
+}
+
+.cta-button::after {
+  content: '\2192';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
   opacity: 0;
-  transform: translateX(-10px);
+  font-size: 1.5rem;
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
   color: #ffffff;
-  padding-right: 35px;
+}
+
+.cta-button:hover span {
+  opacity: 0;
 }
 
 .cta-button:hover::before {
@@ -254,7 +279,6 @@
 
 .cta-button:hover::after {
   opacity: 1;
-  transform: translateX(0);
 }
 
 @media (max-width: 1024px) {
@@ -286,22 +310,42 @@
     text-align: center;
   }
 
+  /* Disable purple hover effects on mobile */
   .office-item::before {
-    left: 50%;
-    transform: translateX(-50%) scaleY(0);
-    width: 60%;
-    height: 4px;
-    top: 0;
-    bottom: auto;
-    border-radius: 0 0 4px 4px;
-  }
-
-  .office-item:hover::before {
-    transform: translateX(-50%) scaleX(1);
+    display: none;
   }
 
   .office-item:hover {
-    transform: translateY(0);
+    transform: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+
+  .office-item:hover .office-number {
+    color: #cbd5e1;
+  }
+
+  .office-item:hover .office-logo-frame {
+    transform: none;
+  }
+
+  .office-link:hover {
+    color: #1a1a1a;
+  }
+
+  .office-link::after {
+    display: none;
+  }
+
+  .cta-button::before {
+    display: none;
+  }
+
+  .cta-button:hover {
+    padding-right: 40px;
+  }
+
+  .cta-button::after {
+    display: none;
   }
 
   .office-number {

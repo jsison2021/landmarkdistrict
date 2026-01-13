@@ -73,15 +73,6 @@
       "category": "retail"
     },
     {
-      "id": "meta-f1",
-      "name": "Meta F1",
-      "logo": "/assets/tenant-logos/MetaF1.png",
-      "address": "425 W Chestnut St, Louisville, KY 40203",
-      "website": "https://www.metalouisville.com/",
-      "phone": null,
-      "category": "retail"
-    },
-    {
       "id": "metro-pcs",
       "name": "Metro PCS",
       "logo": "/assets/tenant-logos/Metro.png",

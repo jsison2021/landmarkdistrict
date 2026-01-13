@@ -9,11 +9,12 @@
       "lng": -85.76141
     },
     "googleMapsApiKey": "AIzaSyAewvSSykXCJCtug3_cJm7WBIe90iGJdNk",
-    "address": "401 W Oak St, Louisville, KY 40203",
+    "address": "4th & Oak St, Louisville, KY 40203",
     "neighborhood": "Old Louisville"
   },
   "about": {
     "tagline": "Restoring Old Louisville",
+    "headlinePrefix": "Shops at",
     "headline": "LANDMARK DISTRICT",
     "description": "Nestled in the heart of Old Louisville, perfectly positioned between Downtown and the University of Louisville. Discover a curated collection of shops, restaurants, and professional spaces within one of Louisville's most historic neighborhoods."
   }

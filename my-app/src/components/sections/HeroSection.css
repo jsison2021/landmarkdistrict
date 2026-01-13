@@ -54,6 +54,18 @@
   text-transform: uppercase;
 }
 
+.hero-headline-prefix {
+  display: block;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #64748b 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .hero-tagline {
   font-family: var(--font-heading);
   font-size: clamp(1.25rem, 3vw, 2rem);

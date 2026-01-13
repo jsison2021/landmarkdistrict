@@ -30,6 +30,21 @@
   transform-origin: center;
 }
 
+.logo-intro-text-wrapper {
+  text-align: center;
+}
+
+.logo-intro-prefix {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
 .logo-intro-text {
   font-family: var(--font-heading);
   font-size: 32px;
@@ -47,6 +62,11 @@
 
   .logo-intro-line {
     width: 150px;
+  }
+
+  .logo-intro-prefix {
+    font-size: 11px;
+    letter-spacing: 3px;
   }
 
   .logo-intro-text {
