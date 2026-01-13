@@ -32,7 +32,10 @@ function Navigation({ scrollToSection, sections }) {
     <>
       <nav className={`navigation ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
-          <div className="nav-brand">LANDMARK DISTRICT</div>
+          <div className="nav-brand">
+            <img src="/assets/tenant-logos/logo.png" alt="Landmark District" className="nav-logo" />
+            <span className="nav-brand-text">LANDMARK DISTRICT</span>
+          </div>
 
           {/* Desktop Navigation */}
           <ul className="nav-links desktop-only">

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useScrollSnap } from './hooks/useScrollSnap';
 import Navigation from './components/layout/Navigation';
 import ScrollIndicator from './components/layout/ScrollIndicator';
+import LogoIntro from './components/animations/LogoIntro';
 import HeroSection from './components/sections/HeroSection';
 import ShopsSection from './components/sections/ShopsSection';
 import OfficesSection from './components/sections/OfficesSection';
@@ -19,10 +20,12 @@ const sections = [
 ];
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
   const { containerRef, activeSection, scrollToSection } = useScrollSnap(sections);
 
   return (
     <>
+      {showIntro && <LogoIntro onComplete={() => setShowIntro(false)} />}
       <Navigation scrollToSection={scrollToSection} sections={sections} />
       <ScrollIndicator
         activeSection={activeSection}

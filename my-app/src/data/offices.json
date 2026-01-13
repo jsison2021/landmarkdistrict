@@ -1,12 +1,66 @@
 {
   "offices": [
     {
-      "id": "anderson-office",
-      "name": "Anderson Office",
+      "id": "a-barber",
+      "name": "A. Barber",
+      "logo": null,
+      "address": "315 W Oak St, Louisville, KY 40203",
+      "website": null,
+      "phone": null,
+      "category": "office"
+    },
+    {
+      "id": "anderson-vaughn",
+      "name": "Anderson & Vaughn",
       "logo": "/assets/tenant-logos/Anderson.png",
       "address": "1205 S 3rd St, Louisville, KY 40203",
       "website": null,
       "phone": "(502) 637-3335",
+      "category": "office"
+    },
+    {
+      "id": "b-potter",
+      "name": "B. Potter",
+      "logo": null,
+      "address": "315 W Oak St, Louisville, KY 40203",
+      "website": null,
+      "phone": null,
+      "category": "office"
+    },
+    {
+      "id": "delisa-graham",
+      "name": "Delisa Graham",
+      "logo": null,
+      "address": "1151 S 4th St, Louisville, KY 40203",
+      "website": null,
+      "phone": null,
+      "category": "office"
+    },
+    {
+      "id": "j-connelly",
+      "name": "J. Connelly",
+      "logo": null,
+      "address": "218 W Oak St, Louisville, KY 40203",
+      "website": null,
+      "phone": null,
+      "category": "office"
+    },
+    {
+      "id": "liberty-bank",
+      "name": "Liberty Bank",
+      "logo": "/assets/tenant-logos/libertybank.png",
+      "address": "1200 S 4th St, Louisville, KY 40203",
+      "website": "https://www.libertybank.net/",
+      "phone": null,
+      "category": "office"
+    },
+    {
+      "id": "uofl",
+      "name": "University of Louisville",
+      "logo": "/assets/tenant-logos/uofl.png",
+      "address": "1212 S 4th St 101, Louisville, KY 40203",
+      "website": null,
+      "phone": null,
       "category": "office"
     }
   ]

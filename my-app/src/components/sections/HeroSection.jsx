@@ -6,21 +6,50 @@ import './HeroSection.css';
 function HeroSection() {
   const about = getAboutInfo();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.4, 0, 0.2, 1],
+      },
+    },
+  };
+
   return (
     <section id="hero" className="full-page-section hero-section">
       <motion.div
         className="hero-content"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <h1 className="hero-headline">{about.headline}</h1>
-        <p className="hero-tagline">{about.tagline}</p>
-        <p className="hero-description">{about.description}</p>
-        <div className="scroll-hint">
+        <motion.h1 className="hero-headline" variants={itemVariants}>
+          {about.headline}
+        </motion.h1>
+        <motion.p className="hero-tagline" variants={itemVariants}>
+          {about.tagline}
+        </motion.p>
+        <motion.p className="hero-description" variants={itemVariants}>
+          {about.description}
+        </motion.p>
+        <motion.div className="scroll-hint" variants={itemVariants}>
           <span>Scroll to explore</span>
           <div className="scroll-arrow">↓</div>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

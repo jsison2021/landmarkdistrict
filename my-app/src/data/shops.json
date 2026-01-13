@@ -1,20 +1,29 @@
 {
   "shops": [
     {
-      "id": "bottled-liquors",
-      "name": "Bottled Liquors",
+      "id": "beauteous-nail",
+      "name": "Beauteous Nail",
+      "logo": "/assets/tenant-logos/nails.png",
+      "address": "325-327 W Oak St, Louisville, KY 40203",
+      "website": "https://app.acuityscheduling.com/schedule/e8105012",
+      "phone": null,
+      "category": "service"
+    },
+    {
+      "id": "bottled",
+      "name": "Bottled",
       "logo": "/assets/tenant-logos/Bottled.png",
       "address": "412 W Oak St, Louisville, KY 40203",
-      "website": "https://bottledliquors.com/",
+      "website": null,
       "phone": "(502) 526-5030",
       "category": "retail"
     },
     {
-      "id": "caribbean-coin-laundry",
-      "name": "Caribbean Coin Laundry",
+      "id": "caribbean-laundry",
+      "name": "Caribbean Laundry",
       "logo": "/assets/tenant-logos/coin.png",
       "address": "401 W Oak St, Louisville, KY 40203",
-      "website": "https://www.caribbeancoinlaundry.com/",
+      "website": null,
       "phone": "502-654-7871",
       "category": "service"
     },
@@ -22,26 +31,35 @@
       "id": "dollar-general",
       "name": "Dollar General",
       "logo": "/assets/tenant-logos/DollareGeneral_Logo.png",
-      "address": "418 W Oak St, Louisville, KY 40203",
+      "address": "409 W Oak St, Louisville, KY 40203",
       "website": "https://www.dollargeneral.com/",
       "phone": "(502) 665-0698",
       "category": "retail"
     },
     {
-      "id": "jc-dreamlight",
-      "name": "JC Dreamlight",
+      "id": "dreamlight-gallery",
+      "name": "Dreamlight Gallery",
       "logo": "/assets/tenant-logos/Dreamlight.png",
       "address": "1201 S 3rd St, Louisville, KY 40203",
-      "website": "https://www.facebook.com/jcdreamlight/",
-      "phone": "(502) 314-1117",
+      "website": null,
+      "phone": null,
       "category": "retail"
     },
     {
+      "id": "elixir",
+      "name": "Elixir",
+      "logo": "/assets/tenant-logos/Elixir.png",
+      "address": "414 W Oak St, Louisville, KY 40203",
+      "website": "https://www.elixirteahouse.com/",
+      "phone": null,
+      "category": "food-beverage"
+    },
+    {
       "id": "fleur-de-tea",
-      "name": "Fleur de Tea",
+      "name": "Fleur De Tea",
       "logo": "/assets/tenant-logos/FlurDeTea.png",
-      "address": "1212 S. 4th St. Suite 100 Louisville, KY 40203",
-      "website": "https://www.fleurdetea.store/",
+      "address": "1212 S 4th St 100, Louisville, KY 40203",
+      "website": null,
       "phone": "(502) 742-9561",
       "category": "food-beverage"
     },
@@ -55,31 +73,76 @@
       "category": "retail"
     },
     {
-      "id": "metro-by-tmobile",
-      "name": "Metro by T-Mobile",
+      "id": "meta-f1",
+      "name": "Meta F1",
+      "logo": "/assets/tenant-logos/MetaF1.png",
+      "address": "425 W Chestnut St, Louisville, KY 40203",
+      "website": "https://www.metalouisville.com/",
+      "phone": null,
+      "category": "retail"
+    },
+    {
+      "id": "metro-pcs",
+      "name": "Metro PCS",
       "logo": "/assets/tenant-logos/Metro.png",
-      "address": "403 W Oak St Louisville, KY 40203",
-      "website": "https://www.metrobyt-mobile.com/",
+      "address": "403 W Oak St, Louisville, KY 40203",
+      "website": null,
       "phone": "(502) 618-2287",
       "category": "retail"
     },
     {
-      "id": "rooftop-grill",
-      "name": "Rooftop Grill",
-      "logo": "/assets/tenant-logos/roofTop.png",
-      "address": "414 W Oak Street Louisville, KY 40203",
-      "website": "https://www.facebook.com/rooftopgrillky/",
-      "phone": "(502) 618-2287",
+      "id": "organic-cures",
+      "name": "Organic Cures",
+      "logo": "/assets/tenant-logos/organiccures.png",
+      "address": "329 W Oak St, Louisville, KY 40203",
+      "website": null,
+      "phone": "(502) 616-7097",
+      "category": "retail"
+    },
+    {
+      "id": "pizza-king",
+      "name": "Pizza King",
+      "logo": "/assets/tenant-logos/PizzaKing.png",
+      "address": "416 W Oak St, Louisville, KY 40203",
+      "website": "https://pizzarestaurantlouisville.com/",
+      "phone": null,
       "category": "food-beverage"
     },
     {
-      "id": "soul-food-restaurant",
-      "name": "Soul Food Restaurant",
-      "logo": "/assets/tenant-logos/soulFood.png",
+      "id": "southern-express",
+      "name": "Southern Express",
+      "logo": "/assets/tenant-logos/southernexpress.png",
       "address": "418 W Oak St, Louisville, KY 40203",
       "website": "https://www.facebook.com/1DOLLARJUST1DOLLAR/",
-      "phone": "(502) 963-1719",
+      "phone": null,
       "category": "food-beverage"
+    },
+    {
+      "id": "taste-of-china",
+      "name": "Taste of China",
+      "logo": "/assets/tenant-logos/tasteofchina.png",
+      "address": "1167 S 4th St / 333 W Oak St, Louisville, KY 40203",
+      "website": "https://tasteofchinalouisville.3menucities.com/catalog.aspx?cid=1#",
+      "phone": null,
+      "category": "food-beverage"
+    },
+    {
+      "id": "wangs-thangs",
+      "name": "Wangz & Thangz",
+      "logo": "/assets/tenant-logos/wangsnthings.png",
+      "address": "317 W Oak St, Louisville, KY 40203",
+      "website": null,
+      "phone": "(502) 377-9969",
+      "category": "food-beverage"
+    },
+    {
+      "id": "zoes-tattoo",
+      "name": "Zoe's Tattoo",
+      "logo": "/assets/tenant-logos/download.jpeg",
+      "address": "1161 S 4th St, Louisville, KY 40203",
+      "website": null,
+      "phone": null,
+      "category": "service"
     }
   ]
 }
