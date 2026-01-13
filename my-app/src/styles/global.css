@@ -113,3 +113,18 @@ img {
     scroll-snap-type: y proximity;
   }
 }
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .full-page-section {
+    padding: 90px 15px 30px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}

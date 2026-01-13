@@ -257,4 +257,52 @@
   .shop-actions {
     justify-content: center;
   }
+
+  .shop-link {
+    padding: 10px 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    letter-spacing: 0.1em;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .shop-item {
+    padding: 30px 0;
+  }
+
+  .shop-number {
+    font-size: 1.25rem;
+  }
+
+  .shop-name {
+    font-size: 1.25rem;
+  }
+
+  .shop-logo-frame {
+    max-width: 250px;
+    height: 100px;
+  }
+
+  .shop-address {
+    font-size: 0.875rem;
+  }
+
+  .shop-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

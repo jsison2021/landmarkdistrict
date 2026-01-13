@@ -31,6 +31,10 @@ function HeroSection() {
 
   return (
     <section id="hero" className="full-page-section hero-section">
+      <div
+        className="hero-background"
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/assets/tenant-logos/oldlouisville.jpg)` }}
+      />
       <motion.div
         className="hero-content"
         variants={containerVariants}
