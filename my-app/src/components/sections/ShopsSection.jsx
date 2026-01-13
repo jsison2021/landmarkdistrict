@@ -30,7 +30,7 @@ function ShopsSection() {
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.15
+                staggerChildren: 0.08
               }
             }
           }}
@@ -48,7 +48,7 @@ function ShopsSection() {
 
               <div className="shop-logo-wrapper">
                 <div className="shop-logo-frame">
-                  {shop.logo && <img src={shop.logo} alt={`${shop.name} logo`} className="shop-logo" />}
+                  {shop.logo && <img src={shop.logo} alt={`${shop.name} logo`} className="shop-logo" loading="lazy" />}
                 </div>
               </div>
 

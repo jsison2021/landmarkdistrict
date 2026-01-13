@@ -48,7 +48,7 @@ function OfficesSection() {
 
               <div className="office-logo-wrapper">
                 <div className="office-logo-frame">
-                  {office.logo && <img src={office.logo} alt={`${office.name} logo`} className="office-logo" />}
+                  {office.logo && <img src={office.logo} alt={`${office.name} logo`} className="office-logo" loading="lazy" />}
                 </div>
               </div>
 
