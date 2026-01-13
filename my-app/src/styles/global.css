@@ -107,10 +107,13 @@ img {
   .full-page-section {
     padding: 100px 20px 40px;
     min-height: auto;
+    scroll-snap-align: none;
   }
 
   .scroll-container {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: none;
+    height: auto;
+    overflow-y: visible;
   }
 }
 
