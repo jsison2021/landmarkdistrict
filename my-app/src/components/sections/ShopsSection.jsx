@@ -66,7 +66,7 @@ function ShopsSection() {
                           <img
                             src={shop.logo}
                             alt={`${shop.name} logo`}
-                            className={`masonry-logo ${shop.id === 'elixir' ? 'logo-circular' : ''}`}
+                            className="masonry-logo"
                             loading="lazy"
                           />
                         )}
