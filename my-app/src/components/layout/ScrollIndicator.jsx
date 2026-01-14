@@ -1,7 +1,7 @@
 import React from 'react';
 import './ScrollIndicator.css';
 
-const sectionLabels = ['Home', 'Shops', 'Offices', 'Residences', 'Location', 'Contact'];
+const sectionLabels = ['Home', 'Marketplace', 'Offices', 'Residences', 'Location', 'Contact'];
 
 function ScrollIndicator({ activeSection, scrollToSection, totalSections }) {
   return (

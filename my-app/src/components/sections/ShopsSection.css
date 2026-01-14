@@ -1,11 +1,13 @@
 .shops-section {
   background: transparent;
   position: relative;
+  padding-top: 40px;
 }
 
 .section-header {
   max-width: 800px;
   margin: 0 auto 50px;
+  padding-top: 60px;
   text-align: center;
 }
 
@@ -89,11 +91,11 @@
 }
 
 .masonry-card-image {
-  height: 140px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -123,7 +125,7 @@
 
 /* Info section */
 .masonry-card-info {
-  padding: 16px;
+  padding: 12px 16px 16px;
   text-align: center;
 }
 
