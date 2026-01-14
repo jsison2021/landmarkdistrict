@@ -1,57 +1,65 @@
-import React from 'react';
- 
-import anderson from './pictures/Anderson.png'
-
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot, faEarthAmericas, faPhone } from '@fortawesome/free-solid-svg-icons'
 import Animation from './pageAnimations/Animation'
-import { useEffect } from "react";
-
 import OfficesAnimation from './pageAnimations/OfficesAnimation'
-import {motion} from 'framer-motion'
+import officesData from '../data/offices.json'
+
 function Offices() {
     useEffect(() => {
         window.scrollTo(0, 0);
-       
-      }, []);
+    }, []);
+
     return (
         <div>
             <Animation></Animation>
             <OfficesAnimation></OfficesAnimation>
+
             <div className='shopPage'>
-                <div className='row'>
-                    <div className='col-sm-4'>
+                <div className='businessGrid'>
+                    {officesData.offices.map((office, index) => (
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 1 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
+                            key={office.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            className='businessCard'
                         >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={anderson} className = "shopPictures" alt = "shopPictures" />
+                            <div className='businessImageContainer'>
+                                <img
+                                    src={office.logo}
+                                    className="businessImage"
+                                    alt={office.name}
+                                    loading="lazy"
+                                />
                             </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 1205 S 3rd St, Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 637-3335</p>      
-                        </div>
+                            <div className='businessInfo'>
+                                <h3 className='businessName'>{office.name}</h3>
+                                <span className='businessCategory'>Office</span>
+                                <p className='businessDetail'>
+                                    <FontAwesomeIcon icon={faLocationDot} /> {office.address}
+                                </p>
+                                {office.website && (
+                                    <p className='businessDetail'>
+                                        <FontAwesomeIcon icon={faEarthAmericas} />{' '}
+                                        <a className="weblink" href={office.website} target="_blank" rel="noopener noreferrer">
+                                            Website
+                                        </a>
+                                    </p>
+                                )}
+                                {office.phone && (
+                                    <p className='businessDetail'>
+                                        <FontAwesomeIcon icon={faPhone} /> {office.phone}
+                                    </p>
+                                )}
+                            </div>
                         </motion.div>
-                    </div>
-                    <div className='col-sm-4'>
-                        
-                    </div>
-                    <div className='col-sm-4'>
-                        
-                    </div>
+                    ))}
                 </div>
             </div>
-            
         </div>
-        
-        
-       
-        
     );
 }
- 
+
 export default Offices;

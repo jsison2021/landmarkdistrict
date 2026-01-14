@@ -10,78 +10,60 @@ function OfficesSection() {
     <section id="offices" className="full-page-section offices-section">
       <div className="container">
         <motion.div
-          className="section-header"
+          className="offices-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">OFFICES</h2>
-          <p className="section-subtitle">Professional spaces for businesses that make a difference</p>
+          <h2 className="offices-title">OFFICES</h2>
+          <p className="offices-subtitle">Professional spaces for businesses that make a difference</p>
         </motion.div>
 
-        <motion.div
-          className="offices-list"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.15
-              }
-            }
-          }}
-        >
+        <div className="offices-grid">
           {offices.map((office, index) => (
-            <motion.div
-              key={office.id}
-              className="office-item"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 }
-              }}
-            >
-              <div className="office-number">{String(index + 1).padStart(2, '0')}</div>
-
-              <div className="office-logo-wrapper">
-                <div className="office-logo-frame">
-                  {office.logo && <img src={office.logo} alt={`${office.name} logo`} className="office-logo" loading="lazy" />}
-                </div>
-              </div>
-
-              <div className="office-info">
-                <h3 className="office-name">
-                  {office.namePrefix ? (
-                    <>
-                      <span className="office-name-prefix">{office.namePrefix}</span>{' '}
-                      <span className="office-name-main">{office.nameMain}</span>
-                    </>
-                  ) : (
-                    office.name
+              <motion.div
+                key={office.id}
+                className="office-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="office-card-image">
+                  {office.logo && (
+                    <img
+                      src={office.logo}
+                      alt={`${office.name} logo`}
+                      className="office-logo"
+                      loading="lazy"
+                    />
                   )}
-                </h3>
-                <div className="office-meta">
-                  <div className="office-address">{office.address}</div>
-                  <div className="office-actions">
+                </div>
+                <div className="office-card-info">
+                  <h4 className="office-card-name">{office.name}</h4>
+                  <p className="office-card-address">{office.address}</p>
+                  <div className="office-card-actions">
                     {office.website && (
-                      <a href={office.website} target="_blank" rel="noopener noreferrer" className="office-link office-website">
-                        WEBSITE →
+                      <a
+                        href={office.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="office-card-link"
+                      >
+                        Website
                       </a>
                     )}
                     {office.phone && (
-                      <a href={`tel:${office.phone}`} className="office-link">
-                        {office.phone}
+                      <a href={`tel:${office.phone}`} className="office-card-link">
+                        Call
                       </a>
                     )}
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+        </div>
 
         <motion.div
           className="office-cta"
@@ -91,7 +73,7 @@ function OfficesSection() {
           viewport={{ once: true }}
         >
           <p className="cta-text">Interested in office space at Landmark District?</p>
-          <a href="#contact" className="cta-button"><span>Inquire About Office Space</span></a>
+          <a href="#contact" className="cta-button">Inquire About Office Space</a>
         </motion.div>
       </div>
     </section>

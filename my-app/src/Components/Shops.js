@@ -1,196 +1,94 @@
-
-import dreamlight from './pictures/Dreamlight.png'
-import bottled from './pictures/Bottled.png'
-import soulFood from './pictures/soulFood.png'
-import roofTop from './pictures/roofTop.png'
-import FlurDeTea from './pictures/FlurDeTea.png'
-import DollareGeneral_Logo from './pictures/DollareGeneral_Logo.png'
-import metro from './pictures/Metro.png'
-import coin from './pictures/coin.png'
-import homestore from './pictures/homestore.png'
-import {motion} from 'framer-motion'
-
+import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot, faEarthAmericas, faPhone} from '@fortawesome/free-solid-svg-icons'
-import React, { useEffect } from 'react';
-
+import { faLocationDot, faEarthAmericas, faPhone } from '@fortawesome/free-solid-svg-icons'
+import React, { useEffect, useState } from 'react';
 import Animation from './pageAnimations/Animation'
 import ShopsAnimation from './pageAnimations/ShopsAnimation'
+import shopsData from '../data/shops.json'
+
 function Shops() {
-   
+    const [activeCategory, setActiveCategory] = useState('all');
+
     useEffect(() => {
         window.scrollTo(0, 0);
-       
-      }, []);
+    }, []);
+
+    const categories = [
+        { id: 'all', label: 'All' },
+        { id: 'food-beverage', label: 'Food & Beverage' },
+        { id: 'retail', label: 'Retail' },
+        { id: 'service', label: 'Services' }
+    ];
+
+    const filteredShops = activeCategory === 'all'
+        ? shopsData.shops
+        : shopsData.shops.filter(shop => shop.category === activeCategory);
+
     return (
         <div>
             <Animation></Animation>
             <ShopsAnimation></ShopsAnimation>
-            <div className='shopPage'>
-                <div className='row'>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={bottled} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                                <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 412 W Oak St, Louisville, KY 40203</p>    
-                                <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink"href = "https://bottledliquors.com/">https://bottledliquors.com/</a></p>
-                                <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 526-5030</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={coin} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 401 W Oak St, Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.caribbeancoinlaundry.com/">www.caribbeancoinlaundry.com/</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> 502-654-7871</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={DollareGeneral_Logo} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 418 W Oak St, Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.dollargeneral.com/">https://www.dollargeneral.com/</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 665-0698</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={dreamlight} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 1201 S 3rd St, Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.facebook.com/jcdreamlight/">www.facebook.com/jcdreamlight/</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 314-1117</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={FlurDeTea} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 1212 S. 4th St. Suite 100 Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.fleurdetea.store/">https://www.fleurdetea.store//</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 742-9561</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={homestore} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 1148 S 4th St, Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://homecenterky.com/">https://homecenterky.com/</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 384-5385</p>
-                        </div>
-                        </motion.div>
-                        
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col-md-4'>
-                         <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={metro} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 403 W Oak St Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.metrobyt-mobile.com/">www.metrobyt-mobile.com/</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 618-2287</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={roofTop} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 414 W Oak Street Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.facebook.com/rooftopgrillky/">www.facebook.com/rooftopgrillky/</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} />(502) 618-2287</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                    <div className='col-md-4'>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 2 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: false }}
-                        >
-                        <div className='shopContainer'>
-                            <div className='pictureContainer'>
-                                <img src={soulFood} className = "shopPictures" alt = "shopPictures" />
-                            </div>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faLocationDot} /> 418 W Oak St, Louisville, KY 40203</p>    
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faEarthAmericas} /> <a className= "weblink" href = "https://www.facebook.com/1DOLLARJUST1DOLLAR/">www.facebook.com/</a></p>
-                            <p className='categoryDesc'><FontAwesomeIcon icon={faPhone} /> (502) 963-1719</p>
-                        </div>
-                        </motion.div>
-                    </div>
-                </div>
+
+            {/* Category Filter Buttons */}
+            <div className='categoryFilter'>
+                {categories.map(cat => (
+                    <button
+                        key={cat.id}
+                        className={`filterButton ${activeCategory === cat.id ? 'active' : ''}`}
+                        onClick={() => setActiveCategory(cat.id)}
+                    >
+                        {cat.label}
+                    </button>
+                ))}
             </div>
 
+            <div className='shopPage'>
+                <div className='businessGrid'>
+                    {filteredShops.map((shop, index) => (
+                        <motion.div
+                            key={shop.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            className='businessCard'
+                        >
+                            <div className='businessImageContainer'>
+                                <img
+                                    src={shop.logo}
+                                    className="businessImage"
+                                    alt={shop.name}
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div className='businessInfo'>
+                                <h3 className='businessName'>{shop.name}</h3>
+                                <span className='businessCategory'>{
+                                    shop.category === 'food-beverage' ? 'Food & Beverage' :
+                                    shop.category === 'retail' ? 'Retail' : 'Service'
+                                }</span>
+                                <p className='businessDetail'>
+                                    <FontAwesomeIcon icon={faLocationDot} /> {shop.address}
+                                </p>
+                                {shop.website && (
+                                    <p className='businessDetail'>
+                                        <FontAwesomeIcon icon={faEarthAmericas} />{' '}
+                                        <a className="weblink" href={shop.website} target="_blank" rel="noopener noreferrer">
+                                            Website
+                                        </a>
+                                    </p>
+                                )}
+                                {shop.phone && (
+                                    <p className='businessDetail'>
+                                        <FontAwesomeIcon icon={faPhone} /> {shop.phone}
+                                    </p>
+                                )}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }
- 
+
 export default Shops;

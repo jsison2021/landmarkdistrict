@@ -7,7 +7,16 @@
       "address": "325 W Oak St, Louisville, KY 40203",
       "website": "https://app.acuityscheduling.com/schedule/e8105012",
       "phone": "(502) 500-2236",
-      "category": "service"
+      "category": "services"
+    },
+    {
+      "id": "5-brothers-grocery",
+      "name": "5 Brothers Grocery Plus & Smokeshop",
+      "logo": "/assets/tenant-logos/5brothersgroccery.png",
+      "address": "Louisville, KY 40203",
+      "website": "https://5brothersgroceryandsmokeshop.com/",
+      "phone": "(502) 919-8483",
+      "category": "shopping"
     },
     {
       "id": "bluegrass-bebe",
@@ -16,7 +25,7 @@
       "address": "315 W Oak St, Louisville, KY 40203",
       "website": "https://bluegrassbebe.com/about/",
       "phone": null,
-      "category": "retail"
+      "category": "shopping"
     },
     {
       "id": "bottled",
@@ -25,7 +34,7 @@
       "address": "412 W Oak St, Louisville, KY 40203",
       "website": null,
       "phone": "(502) 526-5030",
-      "category": "retail"
+      "category": "shopping"
     },
     {
       "id": "caribbean-laundry",
@@ -34,7 +43,7 @@
       "address": "401 W Oak St, Louisville, KY 40203",
       "website": "https://www.caribbeancoinlaundry.com/locations/401-w-oak-st-louisville-ky/",
       "phone": "502-654-7871",
-      "category": "service"
+      "category": "services"
     },
     {
       "id": "dollar-general",
@@ -43,34 +52,34 @@
       "address": "409 W Oak St, Louisville, KY 40203",
       "website": "https://www.dollargeneral.com/store-directory/ky/louisville/22716",
       "phone": "(502) 665-0698",
-      "category": "retail"
+      "category": "shopping"
     },
     {
       "id": "dreamlight-gallery",
       "name": "Dreamlight Gallery",
       "logo": "/assets/tenant-logos/Dreamlight.png",
       "address": "1201 S 3rd St, Louisville, KY 40203",
-      "website": null,
+      "website": "https://www.facebook.com/jcdreamlight/",
       "phone": "(502) 314-1117",
-      "category": "retail"
+      "category": "shopping"
     },
     {
       "id": "elixir",
       "name": "Elixir",
-      "logo": "/assets/tenant-logos/Elixir.png",
+      "logo": "/assets/tenant-logos/Elixir.jpg",
       "address": "414 W Oak St, Louisville, KY 40203",
       "website": "https://www.elixirbarlou.com/",
       "phone": "(502) 384-2428",
-      "category": "food-beverage"
+      "category": "bars"
     },
     {
       "id": "fleur-de-tea",
       "name": "Fleur De Tea",
       "logo": "/assets/tenant-logos/FlurDeTea.png",
       "address": "1212 S 4th St 100, Louisville, KY 40203",
-      "website": null,
+      "website": "https://www.facebook.com/fleurdetea/",
       "phone": "(502) 742-9561",
-      "category": "food-beverage"
+      "category": "dining"
     },
     {
       "id": "home-center",
@@ -79,34 +88,34 @@
       "address": "1148 S 4th St, Louisville, KY 40203",
       "website": "https://homecenterky.com/",
       "phone": "(502) 384-5385",
-      "category": "retail"
+      "category": "shopping"
     },
     {
       "id": "lavish",
       "name": "Lavish",
       "logo": "/assets/tenant-logos/lavish.png",
-      "address": "1151 S 4th St, Louisville, KY 40203",
+      "address": "1155 S 4th St, Louisville, KY 40203",
       "website": "https://www.lavishtraining-academy.com/contact-8",
       "phone": "(502) 594-1819",
-      "category": "retail"
+      "category": "services"
     },
     {
       "id": "metro-pcs",
       "name": "Metro PCS",
-      "logo": "/assets/tenant-logos/Metro.png",
+      "logo": "/assets/tenant-logos/metro.svg",
       "address": "403 W Oak St, Louisville, KY 40203",
       "website": "https://www.metrobyt-mobile.com/stores/bd/metro-by-t-mobile-louisville-ky-10211252/",
       "phone": "(502) 618-2287",
-      "category": "retail"
+      "category": "shopping"
     },
     {
       "id": "organic-cures",
       "name": "Organic Cures",
       "logo": "/assets/tenant-logos/organiccures.png",
       "address": "329 W Oak St, Louisville, KY 40203",
-      "website": null,
+      "website": "https://www.facebook.com/p/Organic-Cures-Hemp-Dispensary-100057561695299/",
       "phone": "(502) 616-7097",
-      "category": "retail"
+      "category": "shopping"
     },
     {
       "id": "pizza-king",
@@ -115,7 +124,7 @@
       "address": "416 W Oak St, Louisville, KY 40203",
       "website": "https://pizzarestaurantlouisville.com/",
       "phone": "(502) 706-4739",
-      "category": "food-beverage"
+      "category": "dining"
     },
     {
       "id": "southern-express",
@@ -124,7 +133,7 @@
       "address": "418 W Oak St, Louisville, KY 40203",
       "website": "https://www.facebook.com/1DOLLARJUST1DOLLAR/",
       "phone": "(502) 963-1719",
-      "category": "food-beverage"
+      "category": "dining"
     },
     {
       "id": "taste-of-china",
@@ -133,7 +142,7 @@
       "address": "1167 S 4th St, Louisville, KY 40203",
       "website": "https://tasteofchinalouisville.3menucities.com/catalog.aspx?cid=1#",
       "phone": "(502) 585-5582",
-      "category": "food-beverage"
+      "category": "dining"
     },
     {
       "id": "wangs-thangs",
@@ -142,16 +151,16 @@
       "address": "317 W Oak St, Louisville, KY 40203",
       "website": null,
       "phone": "(502) 377-9969",
-      "category": "food-beverage"
+      "category": "dining"
     },
     {
       "id": "zoes-tattoo",
       "name": "Zoe's Tattoo",
-      "logo": "/assets/tenant-logos/download.jpeg",
+      "logo": "/assets/tenant-logos/zoes.png",
       "address": "1161 S 4th St, Louisville, KY 40203",
       "website": "https://www.zoestattoos.com/",
       "phone": "502-468-6704",
-      "category": "service"
+      "category": "services"
     }
   ]
 }

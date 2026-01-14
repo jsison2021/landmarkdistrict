@@ -11,7 +11,7 @@ function Footer() {
           © {currentYear} Landmark District. All Rights Reserved.
         </p>
         <p className="footer-location">
-          Old Louisville, Louisville KY
+          Louisville, KY
         </p>
       </div>
     </footer>

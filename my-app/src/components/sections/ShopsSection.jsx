@@ -3,8 +3,20 @@ import { motion } from 'framer-motion';
 import { getShops } from '../../data';
 import './ShopsSection.css';
 
+const categories = [
+  { id: 'dining', label: 'Dining', description: 'Restaurants & Cafes' },
+  { id: 'bars', label: 'Bars', description: 'Nightlife & Drinks' },
+  { id: 'shopping', label: 'Shopping', description: 'Retail & Stores' },
+  { id: 'services', label: 'Services', description: 'Beauty & More' }
+];
+
 function ShopsSection() {
   const shops = getShops();
+
+  const getShopsByCategory = (categoryId) => {
+    return shops.filter(shop => shop.category === categoryId);
+  };
+
 
   return (
     <section id="shops" className="full-page-section shops-section">
@@ -17,65 +29,75 @@ function ShopsSection() {
           viewport={{ once: true }}
         >
           <h2 className="section-title">SHOPS & RESTAURANTS</h2>
-          <p className="section-subtitle">Curated retail experiences in the heart of Old Louisville</p>
+          <p className="section-subtitle">Discover local businesses in the heart of Old Louisville</p>
         </motion.div>
 
-        <motion.div
-          className="shops-list"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.08
-              }
-            }
-          }}
-        >
-          {shops.map((shop, index) => (
-            <motion.div
-              key={shop.id}
-              className="shop-item"
-              variants={{
-                hidden: { opacity: 0, x: -30 },
-                visible: { opacity: 1, x: 0 }
-              }}
-            >
-              <div className="shop-number">{String(index + 1).padStart(2, '0')}</div>
+        {categories.map((category, categoryIndex) => {
+          const categoryShops = getShopsByCategory(category.id);
+          if (categoryShops.length === 0) return null;
 
-              <div className="shop-logo-wrapper">
-                <div className="shop-logo-frame">
-                  {shop.logo && <img src={shop.logo} alt={`${shop.name} logo`} className="shop-logo" loading="lazy" />}
-                </div>
+          return (
+            <motion.div
+              key={category.id}
+              className="category-section"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div className="category-header">
+                <h3 className="category-title">{category.label}</h3>
+                <span className="category-line"></span>
+                <span className="category-count">{categoryShops.length}</span>
               </div>
 
-              <div className="shop-info">
-                <h3 className="shop-name">{shop.name}</h3>
-                <div className="shop-meta">
-                  <div className="shop-address">{shop.address}</div>
-                  <div className="shop-actions">
-                    {shop.website && (
-                      <a
-                        href={shop.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="shop-link"
-                      >
-                        Website →
-                      </a>
-                    )}
-                    <a href={`tel:${shop.phone}`} className="shop-link">
-                      {shop.phone}
-                    </a>
-                  </div>
-                </div>
+              <div className="masonry-grid">
+                {categoryShops.map((shop, index) => (
+                    <motion.div
+                      key={shop.id}
+                      className="masonry-card"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.08 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="masonry-card-image">
+                        {shop.logo && (
+                          <img
+                            src={shop.logo}
+                            alt={`${shop.name} logo`}
+                            className={`masonry-logo ${shop.id === 'elixir' ? 'logo-circular' : ''}`}
+                            loading="lazy"
+                          />
+                        )}
+                      </div>
+                      <div className="masonry-card-info">
+                        <h4 className="masonry-card-name">{shop.name}</h4>
+                        <p className="masonry-card-address">{shop.address}</p>
+                        <div className="masonry-card-actions">
+                          {shop.website && (
+                            <a
+                              href={shop.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="masonry-card-link"
+                            >
+                              Website
+                            </a>
+                          )}
+                          {shop.phone && (
+                            <a href={`tel:${shop.phone}`} className="masonry-card-link">
+                              Call
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
+                ))}
               </div>
             </motion.div>
-          ))}
-        </motion.div>
+          );
+        })}
       </div>
     </section>
   );
