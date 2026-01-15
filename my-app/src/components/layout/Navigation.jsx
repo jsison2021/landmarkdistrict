@@ -4,7 +4,6 @@ import './Navigation.css';
 const navItems = [
   { id: 'hero', label: 'Home' },
   { id: 'shops', label: 'Marketplace' },
-  { id: 'offices', label: 'Offices' },
   { id: 'residences', label: 'Residences' },
   { id: 'location', label: 'Location' },
   { id: 'contact', label: 'Contact' }

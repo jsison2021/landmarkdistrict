@@ -5,7 +5,6 @@ import ScrollIndicator from './components/layout/ScrollIndicator';
 import LogoIntro from './components/animations/LogoIntro';
 import HeroSection from './components/sections/HeroSection';
 import ShopsSection from './components/sections/ShopsSection';
-import OfficesSection from './components/sections/OfficesSection';
 import ResidencesSection from './components/sections/ResidencesSection';
 import LocationSection from './components/sections/LocationSection';
 import ContactSection from './components/sections/ContactSection';
@@ -13,7 +12,6 @@ import ContactSection from './components/sections/ContactSection';
 const sections = [
   { id: 'hero', Component: HeroSection },
   { id: 'shops', Component: ShopsSection },
-  { id: 'offices', Component: OfficesSection },
   { id: 'residences', Component: ResidencesSection },
   { id: 'location', Component: LocationSection },
   { id: 'contact', Component: ContactSection }

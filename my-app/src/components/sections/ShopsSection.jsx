@@ -4,10 +4,9 @@ import { getShops } from '../../data';
 import './ShopsSection.css';
 
 const categories = [
-  { id: 'dining', label: 'Dining', description: 'Restaurants & Cafes' },
-  { id: 'bars', label: 'Bars', description: 'Nightlife & Drinks' },
-  { id: 'shopping', label: 'Shopping', description: 'Retail & Stores' },
-  { id: 'services', label: 'Services', description: 'Beauty & More' }
+  { id: 'restaurants', label: 'Restaurants', description: 'Dining & Drinks' },
+  { id: 'retail', label: 'Retail', description: 'Shops & Stores' },
+  { id: 'services', label: 'Services', description: 'Professional & Personal' }
 ];
 
 function ShopsSection() {
