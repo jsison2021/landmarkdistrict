@@ -1,132 +1,63 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { getContactInfo } from '../../data';
-import Footer from '../layout/Footer';
-import './ContactSection.css';
 
-function ContactSection() {
-  const contact = getContactInfo();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would integrate with email service
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
-  };
-
   return (
-    <section id="contact" className="full-page-section contact-section">
-      <div className="container-narrow">
-        <motion.div
-          className="contact-content"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="section-title contact-title">GET IN TOUCH</h2>
-
-          <div className="contact-info-grid">
-            {contact.phone && (
-              <div className="contact-info-item">
-                <a href={`tel:${contact.phone}`} className="contact-link">
-                  {contact.phone}
-                </a>
-              </div>
-            )}
-            {contact.email && (
-              <div className="contact-info-item">
-                <a href={`mailto:${contact.email}`} className="contact-link">
-                  {contact.email}
-                </a>
-              </div>
-            )}
+    <section id="contact" className="contact" data-palette="charcoal">
+      <div className="contact-inner">
+        <div>
+          <div className="section-eyebrow">Leasing &amp; press</div>
+          <h3 data-reveal="words" data-reveal-mode="letters">
+            Let's start a <em>conversation</em>.
+          </h3>
+          <div className="contact-details" data-reveal style={{ '--d': '0.25s' }}>
+            <a href="mailto:leasing@landmarkdistrict.com">leasing@landmarkdistrict.com</a>
+            <a href="tel:5025555555">+1 (502) 555 · 5555</a>
           </div>
+          <p className="footer-mail">
+            Shops at Landmark District<br />
+            Louisville Title Building<br />
+            223 S 5th Street, Suite 262<br />
+            Louisville, KY 40202
+          </p>
+        </div>
 
-          <div className="contact-form-wrapper">
-            {!submitted ? (
-              <form onSubmit={handleSubmit} className="contact-form">
-                <h3 className="form-title">Leasing Inquiries</h3>
-                <div className="form-row">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="form-input"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="form-input"
-                  />
-                </div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="form-input"
-                />
-                <textarea
-                  name="message"
-                  placeholder="Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="form-textarea"
-                />
-                <button type="submit" className="form-submit">
-                  Send Message
-                </button>
-              </form>
-            ) : (
-              <div className="form-success">
-                Thank you for your inquiry. We'll be in touch soon!
-              </div>
-            )}
-
-            <div className="contact-mail-section">
-              <h3 className="mail-title">Mail</h3>
-              <address className="mail-address">
-                <span className="mail-address-line">Shops at Landmark District</span>
-                <span className="mail-address-line">Louisville Title Building</span>
-                <span className="mail-address-line">223 S 5th Street, Suite 262</span>
-                <span className="mail-address-line">Louisville, KY 40202</span>
-              </address>
+        {submitted ? (
+          <div className="contact-form" data-reveal style={{ '--d': '0.2s' }}>
+            <div style={{ padding: '20px 0', fontFamily: 'var(--font-display)', fontSize: '24px', color: 'var(--accent)' }}>
+              Thank you — we'll be in touch soon.
             </div>
           </div>
-        </motion.div>
+        ) : (
+          <form
+            className="contact-form"
+            data-reveal
+            style={{ '--d': '0.2s' }}
+            onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+          >
+            <div className="contact-row">
+              <div className="contact-field">
+                <label>Name</label>
+                <input type="text" required />
+              </div>
+              <div className="contact-field">
+                <label>Email</label>
+                <input type="email" required />
+              </div>
+            </div>
+            <div className="contact-field">
+              <label>Phone (optional)</label>
+              <input type="tel" />
+            </div>
+            <div className="contact-field">
+              <label>Tell us about your interest</label>
+              <textarea rows="4" />
+            </div>
+            <button className="contact-submit" type="submit">Send inquiry →</button>
+          </form>
+        )}
       </div>
-      <Footer />
     </section>
   );
 }
-
-export default ContactSection;

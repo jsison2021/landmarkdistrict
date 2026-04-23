@@ -1,93 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import './Navigation.css';
+import React, { useEffect, useState } from 'react';
 
-const navItems = [
-  { id: 'hero', label: 'Home' },
-  { id: 'shops', label: 'Marketplace' },
-  { id: 'residences', label: 'Residences' },
-  { id: 'location', label: 'Location' },
-  { id: 'contact', label: 'Contact' }
+const LINKS = [
+  { id: 'marketplace', label: 'Marketplace' },
+  { id: 'residences',  label: 'Residences' },
+  { id: 'location',    label: 'Location' },
+  { id: 'contact',     label: 'Contact' },
 ];
 
-function Navigation({ scrollToSection, sections }) {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleNavClick = (index) => {
-    scrollToSection(index);
-    setMobileMenuOpen(false);
-  };
-
-  return (
-    <>
-      <nav className={`navigation ${scrolled ? 'scrolled' : ''}`}>
-        <div className="nav-container">
-          <div className="nav-brand">
-            <img src="/assets/tenant-logos/logo.png" alt="Landmark District" className="nav-logo" />
-            <div className="nav-brand-text-wrapper">
-              <span className="nav-brand-prefix">Shops at</span>
-              <span className="nav-brand-text">LANDMARK DISTRICT</span>
-            </div>
-          </div>
-
-          {/* Desktop Navigation */}
-          <ul className="nav-links desktop-only">
-            {navItems.map((item, index) => (
-              <li key={item.id}>
-                <button onClick={() => handleNavClick(index)} className="nav-link">
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile Hamburger */}
-          <button
-            className="hamburger mobile-only"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <div className="mobile-menu-overlay" onClick={() => setMobileMenuOpen(false)}>
-          <div className="mobile-menu-content">
-            <button
-              className="close-button"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close menu"
-            >
-              ×
-            </button>
-            <ul className="mobile-nav-links">
-              {navItems.map((item, index) => (
-                <li key={item.id}>
-                  <button onClick={() => handleNavClick(index)} className="mobile-nav-link">
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
-    </>
-  );
+function smoothTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
 }
 
-export default Navigation;
+export default function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState('hero');
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      const ids = ['hero', 'marketplace', 'residences', 'location', 'contact'];
+      const mid = y + window.innerHeight * 0.4;
+      let cur = 'hero';
+      ids.forEach(id => {
+        const s = document.getElementById(id);
+        if (s && s.offsetTop <= mid) cur = id;
+      });
+      setActive(cur);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
+      <a
+        className="nav-brand"
+        href="#hero"
+        onClick={(e) => { e.preventDefault(); smoothTo('hero'); }}
+      >
+        <img src="/assets/tenant-logos/logo.png" alt="Landmark District" className="nav-logo" />
+        <div className="nav-wordmark">
+          <span className="nav-prefix">Shops at</span>
+          <span className="nav-title">LANDMARK DISTRICT</span>
+        </div>
+      </a>
+      <div className="nav-links">
+        {LINKS.map(l => (
+          <a
+            key={l.id}
+            className={`nav-link${active === l.id ? ' active' : ''}`}
+            href={`#${l.id}`}
+            onClick={(e) => { e.preventDefault(); smoothTo(l.id); }}
+          >
+            {l.label}
+          </a>
+        ))}
+      </div>
+      <a
+        className="nav-cta"
+        href="#contact"
+        onClick={(e) => { e.preventDefault(); smoothTo('contact'); }}
+      >
+        Leasing →
+      </a>
+    </nav>
+  );
+}

@@ -1,65 +1,108 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { getAboutInfo } from '../../data';
-import './HeroSection.css';
+import React, { useEffect, useRef } from 'react';
+import { renderHalftone } from '../../utils/halftone';
 
-function HeroSection() {
-  const about = getAboutInfo();
+const ARCHIVE = '/assets/tenant-logos/archive_building.png';
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
+function smoothTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
+export default function HeroSection() {
+  const imgRef = useRef(null);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    const canvas = canvasRef.current;
+    if (!img || !canvas) return;
+
+    const draw = () => {
+      try {
+        renderHalftone(img, canvas, {
+          cell: 5, maxRadius: 2.1,
+          inkColor: [28, 22, 16],
+          contrast: 1.2, brightness: 0,
+        });
+        const dir = document.documentElement.getAttribute('data-dir') || 'a';
+        const opac = dir === 'a' ? 0.55 : 0.22;
+        document.documentElement.style.setProperty('--dither-opacity', opac);
+      } catch (e) { /* noop */ }
+    };
+
+    if (img.complete && img.naturalWidth) draw();
+    else img.addEventListener('load', draw, { once: true });
+
+    let t;
+    const onResize = () => { clearTimeout(t); t = setTimeout(draw, 250); };
+    window.addEventListener('resize', onResize);
+
+    const onScroll = () => {
+      const hero = document.getElementById('hero');
+      if (!hero) return;
+      const rect = hero.getBoundingClientRect();
+      const pct = Math.max(0, Math.min(1, -rect.top / (rect.height || 1)));
+      document.documentElement.style.setProperty('--hero-scale', String(1.05 + pct * 0.08));
+      if (img) img.style.transform = `scale(${1.05 + pct * 0.08}) translateY(${pct * 40}px)`;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    return () => {
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(t);
+    };
+  }, []);
 
   return (
-    <section id="hero" className="full-page-section hero-section">
-      <div
-        className="hero-background"
-        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/assets/tenant-logos/oldlouisville.jpg)` }}
-      />
-      <motion.div
-        className="hero-content"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.h1 className="hero-headline" variants={itemVariants}>
-          {about.headlinePrefix && (
-            <span className="hero-headline-prefix">{about.headlinePrefix}</span>
-          )}
-          {about.headline}
-        </motion.h1>
-        <motion.p className="hero-tagline" variants={itemVariants}>
-          {about.tagline}
-        </motion.p>
-        <motion.p className="hero-description" variants={itemVariants}>
-          {about.description}
-        </motion.p>
-        <motion.div className="scroll-hint" variants={itemVariants}>
-          <span>Scroll to explore</span>
-          <div className="scroll-arrow">↓</div>
-        </motion.div>
-      </motion.div>
+    <section id="hero" className="hero" data-palette="cream">
+      <div className="hero-inner">
+        <div className="hero-left">
+          <h1 data-reveal="words" data-reveal-mode="drift">
+            Restoring a <em>landmark</em> in the heart of Old Louisville.
+          </h1>
+          <p className="hero-sub" data-reveal style={{ '--d': '0.3s' }}>
+            Shops at Landmark District is a curated collection of restaurants, retail and services in one of America's largest Victorian neighborhoods — positioned between downtown Louisville and the University of Louisville.
+          </p>
+          <div className="hero-cta-row" data-reveal style={{ '--d': '0.5s' }}>
+            <a
+              className="btn-primary"
+              href="#marketplace"
+              onClick={(e) => { e.preventDefault(); smoothTo('marketplace'); }}
+            >
+              Explore the marketplace <span className="arrow">→</span>
+            </a>
+            <a
+              className="btn-ghost"
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); smoothTo('contact'); }}
+            >
+              Leasing inquiries <span className="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-right" data-reveal style={{ '--d': '0.2s' }}>
+          <div className="hero-photo">
+            <img
+              id="hero-src-img"
+              ref={imgRef}
+              className="hero-photo-img"
+              src={ARCHIVE}
+              alt="Landmark District, archival photograph"
+              crossOrigin="anonymous"
+            />
+            <canvas ref={canvasRef} className="hero-photo-dither" />
+            <div className="hero-photo-tag">Archive № 04 · Circa 1962</div>
+            <div className="hero-photo-frame" />
+          </div>
+          <div className="hero-photo-caption">
+            <span>4th &amp; Oak · Old Louisville</span>
+            <span>Photo · The Courier-Journal</span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
-
-export default HeroSection;

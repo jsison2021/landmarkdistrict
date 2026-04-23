@@ -1,40 +1,38 @@
-import React, { useState } from 'react';
-import { useScrollSnap } from './hooks/useScrollSnap';
+import React, { useEffect, useState } from 'react';
 import Navigation from './components/layout/Navigation';
-import ScrollIndicator from './components/layout/ScrollIndicator';
+import Footer from './components/layout/Footer';
 import LogoIntro from './components/animations/LogoIntro';
 import HeroSection from './components/sections/HeroSection';
 import ShopsSection from './components/sections/ShopsSection';
 import ResidencesSection from './components/sections/ResidencesSection';
 import LocationSection from './components/sections/LocationSection';
 import ContactSection from './components/sections/ContactSection';
-
-const sections = [
-  { id: 'hero', Component: HeroSection },
-  { id: 'shops', Component: ShopsSection },
-  { id: 'residences', Component: ResidencesSection },
-  { id: 'location', Component: LocationSection },
-  { id: 'contact', Component: ContactSection }
-];
+import { useReveal } from './hooks/useReveal';
+import { useScrollPalette } from './hooks/useScrollPalette';
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
-  const { containerRef, activeSection, scrollToSection } = useScrollSnap(sections);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-dir', 'a');
+    document.documentElement.setAttribute('data-dark', '0');
+    document.documentElement.style.setProperty('--motion', '1');
+  }, []);
+
+  useReveal();
+  useScrollPalette('a');
 
   return (
     <>
-      {showIntro && <LogoIntro onComplete={() => setShowIntro(false)} />}
-      <Navigation scrollToSection={scrollToSection} sections={sections} />
-      <ScrollIndicator
-        activeSection={activeSection}
-        scrollToSection={scrollToSection}
-        totalSections={sections.length}
-      />
-      <div ref={containerRef} className="scroll-container">
-        {sections.map(({ id, Component }) => (
-          <Component key={id} />
-        ))}
-      </div>
+      <div className="scroll-progress" id="scroll-progress" aria-hidden="true" />
+      {showIntro && <LogoIntro direction="a" onComplete={() => setShowIntro(false)} />}
+      <Navigation />
+      <HeroSection />
+      <ShopsSection />
+      <ResidencesSection />
+      <LocationSection />
+      <ContactSection />
+      <Footer />
     </>
   );
 }
