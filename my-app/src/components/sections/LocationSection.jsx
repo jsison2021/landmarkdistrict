@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const LAT = 38.2350;
 const LNG = -85.7603667;
+const MAPS_KEY = 'AIzaSyAoSuMpODYzJWgvdZbAJuHYNJmRwF2H-ts';
 
 const EDITORIAL_STYLE = [
   { elementType: 'geometry', stylers: [{ color: '#efe9dc' }] },
@@ -23,19 +24,54 @@ const EDITORIAL_STYLE = [
   { featureType: 'water', elementType: 'labels.text.fill', stylers: [{ color: '#6a7a72' }] },
 ];
 
+let mapsScriptPromise = null;
+function loadGoogleMaps() {
+  if (typeof window === 'undefined') return Promise.reject(new Error('no window'));
+  if (window.google && window.google.maps) return Promise.resolve();
+  if (mapsScriptPromise) return mapsScriptPromise;
+  mapsScriptPromise = new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_KEY}&loading=async`;
+    s.async = true;
+    s.defer = true;
+    s.onload = () => resolve();
+    s.onerror = () => { mapsScriptPromise = null; reject(new Error('maps load failed')); };
+    document.head.appendChild(s);
+  });
+  return mapsScriptPromise;
+}
+
 export default function LocationSection() {
+  const sectionRef = useRef(null);
   const mapRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    const el = mapRef.current;
-    if (!el) return;
+    const el = sectionRef.current;
+    if (!el) return undefined;
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoad(true);
+      return undefined;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          io.disconnect();
+        }
+      });
+    }, { rootMargin: '400px 0px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
-    let pollInterval;
+  useEffect(() => {
+    if (!shouldLoad) return undefined;
     let cancelled = false;
 
     const init = () => {
-      if (cancelled) return;
-      if (!window.google || !window.google.maps) return;
+      const el = mapRef.current;
+      if (!el || cancelled || !window.google || !window.google.maps) return;
 
       const map = new window.google.maps.Map(el, {
         center: { lat: LAT, lng: LNG },
@@ -69,26 +105,13 @@ export default function LocationSection() {
       pin.setMap(map);
     };
 
-    if (window.google && window.google.maps) {
-      init();
-    } else {
-      pollInterval = setInterval(() => {
-        if (window.google && window.google.maps) {
-          clearInterval(pollInterval);
-          init();
-        }
-      }, 80);
-      setTimeout(() => clearInterval(pollInterval), 10000);
-    }
+    loadGoogleMaps().then(init).catch(() => { /* offline fallback shows static placeholder */ });
 
-    return () => {
-      cancelled = true;
-      if (pollInterval) clearInterval(pollInterval);
-    };
-  }, []);
+    return () => { cancelled = true; };
+  }, [shouldLoad]);
 
   return (
-    <section id="location" className="location" data-palette="blush">
+    <section id="location" ref={sectionRef} className="location" data-palette="blush">
       <div className="location-inner">
         <div className="location-map-wrap">
           <div ref={mapRef} id="leaflet-map" className="leaflet-map" data-reveal="fade" />

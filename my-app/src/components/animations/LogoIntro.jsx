@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { makeHalftoneReveal } from '../../utils/halftone';
 
-const ARCHIVE = '/assets/tenant-logos/archive_building.png';
+const ARCHIVE = '/assets/tenant-logos/archive_building.webp';
 
 export default function LogoIntro({ onComplete, direction = 'a' }) {
   const [gone, setGone] = useState(false);
@@ -120,7 +120,7 @@ export default function LogoIntro({ onComplete, direction = 'a' }) {
       </div>
       <div className="intro-b-center">
         <div>
-          <img className="intro-b-logo" src="/assets/tenant-logos/logo.png" alt="" />
+          <img className="intro-b-logo" src="/assets/tenant-logos/logo.webp" alt="" />
           <span className="intro-b-prefix">Shops at</span>
           <div className="intro-b-title">LANDMARK DISTRICT</div>
           <div className="intro-b-rule" />

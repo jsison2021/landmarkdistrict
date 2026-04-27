@@ -3,7 +3,7 @@
     {
       "id": "elixir",
       "name": "Elixir",
-      "logo": "/assets/tenant-logos/Elixir.jpg",
+      "logo": "/assets/tenant-logos/elixir.webp",
       "address": "414 W Oak St, Louisville, KY 40203",
       "website": "https://www.elixirbarlou.com/",
       "phone": "(502) 384-2428",
@@ -12,7 +12,7 @@
     {
       "id": "fleur-de-tea",
       "name": "Fleur De Tea",
-      "logo": "/assets/tenant-logos/FlurDeTea.png",
+      "logo": "/assets/tenant-logos/flurdetea.webp",
       "address": "1212 S 4th St 100, Louisville, KY 40203",
       "website": "https://www.facebook.com/fleurdetea/",
       "phone": "(502) 742-9561",
@@ -21,7 +21,7 @@
     {
       "id": "pizza-king",
       "name": "Pizza King",
-      "logo": "/assets/tenant-logos/PizzaKing.png",
+      "logo": "/assets/tenant-logos/pizzaking.webp",
       "address": "416 W Oak St, Louisville, KY 40203",
       "website": "https://pizzarestaurantlouisville.com/",
       "phone": "(502) 706-4739",
@@ -30,7 +30,7 @@
     {
       "id": "southern-express",
       "name": "Southern Express",
-      "logo": "/assets/tenant-logos/southernexpress.png",
+      "logo": "/assets/tenant-logos/southernexpress.webp",
       "address": "418 W Oak St, Louisville, KY 40203",
       "website": "https://www.facebook.com/1DOLLARJUST1DOLLAR/",
       "phone": "(502) 963-1719",
@@ -39,7 +39,7 @@
     {
       "id": "taste-of-china",
       "name": "Taste of China",
-      "logo": "/assets/tenant-logos/tasteofchina.png",
+      "logo": "/assets/tenant-logos/tasteofchina.webp",
       "address": "1167 S 4th St, Louisville, KY 40203",
       "website": "https://tasteofchinalouisville.3menucities.com/catalog.aspx?cid=1#",
       "phone": "(502) 585-5582",
@@ -48,7 +48,7 @@
     {
       "id": "wangs-thangs",
       "name": "Wangz & Thangz",
-      "logo": "/assets/tenant-logos/wangsnthings.png",
+      "logo": "/assets/tenant-logos/wangsnthings.webp",
       "address": "317 W Oak St, Louisville, KY 40203",
       "website": null,
       "phone": "(502) 377-9969",
@@ -57,7 +57,7 @@
     {
       "id": "5-brothers-grocery",
       "name": "5 Brothers Grocery Plus & Smokeshop",
-      "logo": "/assets/tenant-logos/5brothersgroccery.png",
+      "logo": "/assets/tenant-logos/5brothersgroccery.webp",
       "address": "Louisville, KY 40203",
       "website": "https://5brothersgroceryandsmokeshop.com/",
       "phone": "(502) 919-8483",
@@ -66,7 +66,7 @@
     {
       "id": "bluegrass-bebe",
       "name": "Bluegrass Bebe",
-      "logo": "/assets/tenant-logos/bluegrass.png",
+      "logo": "/assets/tenant-logos/bluegrass.webp",
       "address": "315 W Oak St, Louisville, KY 40203",
       "website": "https://bluegrassbebe.com/about/",
       "phone": "(704) 506-4842",
@@ -75,7 +75,7 @@
     {
       "id": "bottled",
       "name": "Bottled",
-      "logo": "/assets/tenant-logos/Bottled.png",
+      "logo": "/assets/tenant-logos/bottled.webp",
       "address": "412 W Oak St, Louisville, KY 40203",
       "website": null,
       "phone": "(502) 526-5030",
@@ -84,7 +84,7 @@
     {
       "id": "dollar-general",
       "name": "Dollar General",
-      "logo": "/assets/tenant-logos/DollareGeneral_Logo.png",
+      "logo": "/assets/tenant-logos/dollaregeneral_logo.webp",
       "address": "409 W Oak St, Louisville, KY 40203",
       "website": "https://www.dollargeneral.com/store-directory/ky/louisville/22716",
       "phone": "(502) 665-0698",
@@ -93,7 +93,7 @@
     {
       "id": "dreamlight-gallery",
       "name": "Dreamlight Gallery",
-      "logo": "/assets/tenant-logos/Dreamlight.png",
+      "logo": "/assets/tenant-logos/dreamlight.webp",
       "address": "1201 S 3rd St, Louisville, KY 40203",
       "website": "https://www.facebook.com/jcdreamlight/",
       "phone": "(502) 314-1117",
@@ -102,7 +102,7 @@
     {
       "id": "home-center",
       "name": "Home Center",
-      "logo": "/assets/tenant-logos/homestore.png",
+      "logo": "/assets/tenant-logos/homestore.webp",
       "address": "1148 S 4th St, Louisville, KY 40203",
       "website": "https://homecenterky.com/",
       "phone": "(502) 384-5385",
@@ -120,7 +120,7 @@
     {
       "id": "organic-cures",
       "name": "Organic Cures",
-      "logo": "/assets/tenant-logos/organiccures.png",
+      "logo": "/assets/tenant-logos/organiccures.webp",
       "address": "329 W Oak St, Louisville, KY 40203",
       "website": "https://www.facebook.com/p/Organic-Cures-Hemp-Dispensary-100057561695299/",
       "phone": "(502) 616-7097",
@@ -138,7 +138,7 @@
     {
       "id": "beauteous-nail",
       "name": "Beauteous Nail",
-      "logo": "/assets/tenant-logos/nails.png",
+      "logo": "/assets/tenant-logos/nails.webp",
       "address": "325 W Oak St, Louisville, KY 40203",
       "website": "https://app.acuityscheduling.com/schedule/e8105012",
       "phone": "(502) 500-2236",
@@ -147,7 +147,7 @@
     {
       "id": "caribbean-laundry",
       "name": "Caribbean Laundry",
-      "logo": "/assets/tenant-logos/coin.png",
+      "logo": "/assets/tenant-logos/coin.webp",
       "address": "401 W Oak St, Louisville, KY 40203",
       "website": "https://www.caribbeancoinlaundry.com/locations/401-w-oak-st-louisville-ky/",
       "phone": "502-654-7871",
@@ -156,7 +156,7 @@
     {
       "id": "lavish",
       "name": "Lavish",
-      "logo": "/assets/tenant-logos/lavish.png",
+      "logo": "/assets/tenant-logos/lavish.webp",
       "address": "1155 S 4th St, Louisville, KY 40203",
       "website": "https://www.lavishtraining-academy.com/contact-8",
       "phone": "(502) 594-1819",
@@ -165,7 +165,7 @@
     {
       "id": "liberty-bank",
       "name": "Liberty Bank",
-      "logo": "/assets/tenant-logos/libertybank.png",
+      "logo": "/assets/tenant-logos/libertybank.webp",
       "address": "1200 S 4th St, Louisville, KY 40203",
       "website": "https://www.libertybank.net/locations/ky/louisville/4th-street",
       "phone": "(502) 778-7000",
@@ -174,7 +174,7 @@
     {
       "id": "uofl",
       "name": "University of Louisville",
-      "logo": "/assets/tenant-logos/uofl.png",
+      "logo": "/assets/tenant-logos/uofl.webp",
       "address": "1212 S 4th St 101, Louisville, KY 40203",
       "website": "https://louisville.edu/",
       "phone": null,
@@ -183,7 +183,7 @@
     {
       "id": "zoes-tattoo",
       "name": "Zoe's Tattoo",
-      "logo": "/assets/tenant-logos/zoes.png",
+      "logo": "/assets/tenant-logos/zoes.webp",
       "address": "1161 S 4th St, Louisville, KY 40203",
       "website": "https://www.zoestattoos.com/",
       "phone": "502-468-6704",

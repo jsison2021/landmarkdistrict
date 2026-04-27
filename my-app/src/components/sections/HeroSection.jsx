@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { renderHalftone } from '../../utils/halftone';
 
-const ARCHIVE = '/assets/tenant-logos/archive_building.png';
+const ARCHIVE = '/assets/tenant-logos/archive_building.webp';
 
 function smoothTo(id) {
   const el = document.getElementById(id);
@@ -94,7 +94,7 @@ export default function HeroSection() {
               crossOrigin="anonymous"
             />
             <canvas ref={canvasRef} className="hero-photo-dither" />
-            <div className="hero-photo-tag">Archive № 04 · Circa 1962</div>
+            <div className="hero-photo-tag">Archive № 04 · December 19, 1957</div>
             <div className="hero-photo-frame" />
           </div>
           <div className="hero-photo-caption">

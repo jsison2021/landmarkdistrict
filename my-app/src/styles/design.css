@@ -515,6 +515,7 @@ html[data-dir="a"] .hero-left h1 { font-weight: 400; }
   font-family: var(--font-italic);
   font-style: italic;
   font-weight: 300;
+  font-size: 0.82em;
   color: var(--accent);
 }
 .hero-sub {

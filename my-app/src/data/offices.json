@@ -12,7 +12,7 @@
     {
       "id": "liberty-bank",
       "name": "Liberty Bank",
-      "logo": "/assets/tenant-logos/libertybank.png",
+      "logo": "/assets/tenant-logos/libertybank.webp",
       "address": "1200 S 4th St, Louisville, KY 40203",
       "website": "https://www.libertybank.net/locations/ky/louisville/4th-street",
       "phone": "(502) 778-7000",
@@ -21,7 +21,7 @@
     {
       "id": "uofl",
       "name": "University of Louisville",
-      "logo": "/assets/tenant-logos/uofl.png",
+      "logo": "/assets/tenant-logos/uofl.webp",
       "address": "1212 S 4th St 101, Louisville, KY 40203",
       "website": "https://louisville.edu/",
       "phone": null,

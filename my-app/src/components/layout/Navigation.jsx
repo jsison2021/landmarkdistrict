@@ -41,7 +41,7 @@ export default function Navigation() {
         href="#hero"
         onClick={(e) => { e.preventDefault(); smoothTo('hero'); }}
       >
-        <img src="/assets/tenant-logos/logo.png" alt="Landmark District" className="nav-logo" />
+        <img src="/assets/tenant-logos/logo.webp" alt="Landmark District" className="nav-logo" width="32" height="32" />
         <div className="nav-wordmark">
           <span className="nav-prefix">Shops at</span>
           <span className="nav-title">LANDMARK DISTRICT</span>
