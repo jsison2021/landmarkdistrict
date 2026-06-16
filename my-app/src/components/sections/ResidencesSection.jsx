@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
+import { submitNetlifyForm } from '../../utils/netlifyForm';
 
 export default function ResidencesSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setSubmitting(true);
+    setError(false);
+    try {
+      await submitNetlifyForm(form);
+      setSubmitted(true);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section id="residences" className="residences" data-palette="sage">
@@ -70,15 +88,32 @@ export default function ResidencesSection() {
               </span>
             </form>
           ) : (
+            <>
             <form
               className="email-form"
+              name="residences"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               data-reveal
               style={{ '--d': '0.5s' }}
-              onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+              onSubmit={onSubmit}
             >
-              <input type="email" placeholder="your@email.com" required />
-              <button type="submit">Notify me →</button>
+              <input type="hidden" name="form-name" value="residences" />
+              <p hidden>
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+              <input type="email" name="email" placeholder="your@email.com" required />
+              <button type="submit" disabled={submitting}>
+                {submitting ? 'Sending…' : 'Notify me →'}
+              </button>
             </form>
+            {error && (
+              <div style={{ color: 'var(--accent)', fontSize: '13px', marginTop: '8px' }}>
+                Something went wrong — please try again.
+              </div>
+            )}
+            </>
           )}
         </div>
       </div>

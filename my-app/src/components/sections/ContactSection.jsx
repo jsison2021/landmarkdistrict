@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
+import { submitNetlifyForm } from '../../utils/netlifyForm';
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setSubmitting(true);
+    setError(false);
+    try {
+      await submitNetlifyForm(form);
+      setSubmitted(true);
+    } catch (err) {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="contact" data-palette="charcoal">
@@ -12,8 +30,7 @@ export default function ContactSection() {
             Let's start a <em>conversation</em>.
           </h3>
           <div className="contact-details" data-reveal style={{ '--d': '0.25s' }}>
-            <a href="mailto:leasing@landmarkdistrict.com">leasing@landmarkdistrict.com</a>
-            <a href="tel:5025555555">+1 (502) 555 · 5555</a>
+            <a href="tel:5026537251">+1 (502) 653 · 7251</a>
           </div>
           <p className="footer-mail">
             Shops at Landmark District<br />
@@ -32,29 +49,44 @@ export default function ContactSection() {
         ) : (
           <form
             className="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
             data-reveal
             style={{ '--d': '0.2s' }}
-            onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+            onSubmit={onSubmit}
           >
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>Don't fill this out: <input name="bot-field" /></label>
+            </p>
             <div className="contact-row">
               <div className="contact-field">
                 <label>Name</label>
-                <input type="text" required />
+                <input type="text" name="name" required />
               </div>
               <div className="contact-field">
                 <label>Email</label>
-                <input type="email" required />
+                <input type="email" name="email" required />
               </div>
             </div>
             <div className="contact-field">
               <label>Phone (optional)</label>
-              <input type="tel" />
+              <input type="tel" name="phone" />
             </div>
             <div className="contact-field">
               <label>Tell us about your interest</label>
-              <textarea rows="4" />
+              <textarea name="message" rows="4" />
             </div>
-            <button className="contact-submit" type="submit">Send inquiry →</button>
+            {error && (
+              <div style={{ color: 'var(--accent)', fontSize: '14px', marginBottom: '8px' }}>
+                Something went wrong. Please try again or email us directly.
+              </div>
+            )}
+            <button className="contact-submit" type="submit" disabled={submitting}>
+              {submitting ? 'Sending…' : 'Send inquiry →'}
+            </button>
           </form>
         )}
       </div>
