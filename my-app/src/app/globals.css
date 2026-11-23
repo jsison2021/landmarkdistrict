@@ -314,6 +314,31 @@ h1 em, h2 em, .res-hero-line em {
   text-transform: uppercase;
   color: var(--c-mute-dark);
 }
+.intro-brand {
+  animation: rise 0.6s var(--ease) both;
+}
+.intro-logo {
+  display: block;
+  align-self: flex-start;
+  width: auto;
+  height: clamp(64px, 9vw, 120px);
+  margin-bottom: var(--s-5);
+  animation: rise 0.7s var(--ease) both;
+}
+.intro-tagline {
+  margin-top: var(--s-4);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.2vw, 48px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--c-limestone);
+  animation: rise 0.6s var(--ease) 0.55s both;
+}
+.intro-tagline em {
+  font-family: var(--font-italic);
+  font-style: italic;
+  color: var(--c-brick);
+}
 .intro-year {
   font-size: clamp(40px, 7vw, 104px);
   letter-spacing: -0.04em;
