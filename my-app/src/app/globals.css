@@ -1464,7 +1464,6 @@ h1 em, h2 em, .res-hero-line em {
 
 .shop-name a, .shop-plate-link { color: inherit; }
 .shop-name a:hover { color: var(--c-brick); }
-.shop-plate-link { display: block; }
 
 @media (max-width: 1100px) {
   .tenant-neighbor-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
