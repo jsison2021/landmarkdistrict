@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "emails:sync": "node --env-file=.env.local scripts/sync-email-templates.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.78.0",

@@ -1,7 +1,7 @@
 'use server';
 
 import { z } from 'zod';
-import { sendFormEmail } from '@/lib/email';
+import { sendLeasingInquiry, sendResidencesSignup } from '@/lib/email';
 
 export type FormState = { status: 'idle' | 'success' | 'error'; message?: string };
 
@@ -41,17 +41,7 @@ export async function submitContact(_prev: FormState, formData: FormData): Promi
 
   const { name, email, phone, message } = parsed.data;
   try {
-    await sendFormEmail({
-      subject: `Leasing inquiry from ${name}`,
-      replyTo: email,
-      text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        `Phone: ${phone ?? 'Not given'}`,
-        '',
-        message ?? 'No message.',
-      ].join('\n'),
-    });
+    await sendLeasingInquiry({ name, email, phone, message });
     return { status: 'success' };
   } catch (err) {
     console.error('Contact form failed', err);
@@ -68,11 +58,7 @@ export async function joinResidencesList(_prev: FormState, formData: FormData): 
   }
 
   try {
-    await sendFormEmail({
-      subject: 'New residences interest list signup',
-      replyTo: parsed.data.email,
-      text: `${parsed.data.email} joined the residences interest list.`,
-    });
+    await sendResidencesSignup(parsed.data.email);
     return { status: 'success' };
   } catch (err) {
     console.error('Residences form failed', err);
