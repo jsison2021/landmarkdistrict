@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Instrument_Serif, Schibsted_Grotesk } from 'next/font/google';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '@/lib/site';
 import './globals.css';
 
 const display = Schibsted_Grotesk({ subsets: ['latin'], variable: '--font-schibsted', display: 'swap' });
@@ -7,24 +8,30 @@ const italic = Instrument_Serif({ subsets: ['latin'], weight: '400', style: 'ita
 const body = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
 const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' });
 
-const description = 'Restaurants, retail and services in the heart of Old Louisville, Kentucky.';
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://landmarkdistrict.com'),
-  title: 'Shops at Landmark District | Old Louisville',
-  description,
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   manifest: '/manifest.json',
+  alternates: { canonical: '/' },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
   openGraph: {
     type: 'website',
     url: '/',
-    siteName: 'Landmark District',
-    title: 'Shops at Landmark District',
-    description,
+    siteName: SITE_NAME,
+    locale: 'en_US',
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shops at Landmark District',
-    description,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
 };
 
