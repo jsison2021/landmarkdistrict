@@ -1,13 +1,13 @@
 import { shops, type Shop } from '@/lib/shops';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 
-const toE164 = (phone: string) => {
+export const toE164 = (phone: string) => {
   const d = phone.replace(/\D/g, '');
   return `+1-${d.slice(0, 3)}-${d.slice(3, 6)}-${d.slice(6)}`;
 };
 
 // Shop addresses are stored as "Street, Louisville, KY 40203"; the street part is optional in the data.
-function postalAddress(address: string) {
+export function postalAddress(address: string) {
   const parts = address.split(',').map((p) => p.trim());
   const [state, zip] = (parts.at(-1) ?? '').split(/\s+/);
   const city = parts.at(-2) ?? 'Louisville';
@@ -22,7 +22,7 @@ function postalAddress(address: string) {
   };
 }
 
-const TENANT_TYPE: Record<Shop['category'], string> = {
+export const TENANT_TYPE: Record<Shop['category'], string> = {
   restaurants: 'Restaurant',
   retail: 'Store',
   services: 'LocalBusiness',
@@ -62,12 +62,41 @@ export function siteJsonLd() {
         containedInPlace: { '@type': 'Place', name: 'Old Louisville, Louisville, Kentucky' },
         containsPlace: shops.map((s) => ({
           '@type': TENANT_TYPE[s.category],
+          '@id': `${SITE_URL}/shops/${s.id}#business`,
           name: s.name,
+          url: `${SITE_URL}/shops/${s.id}`,
           image: `${SITE_URL}${s.logo}`,
           address: postalAddress(s.address),
           ...(s.phone && { telephone: toE164(s.phone) }),
-          ...(s.website && { url: s.website }),
+          ...(s.website && { sameAs: [s.website] }),
         })),
+      },
+    ],
+  };
+}
+
+export function tenantJsonLd(s: Shop) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': TENANT_TYPE[s.category],
+        '@id': `${SITE_URL}/shops/${s.id}#business`,
+        name: s.name,
+        url: `${SITE_URL}/shops/${s.id}`,
+        image: `${SITE_URL}${s.logo}`,
+        address: postalAddress(s.address),
+        ...(s.phone && { telephone: toE164(s.phone) }),
+        ...(s.website && { sameAs: [s.website] }),
+        containedInPlace: { '@type': 'ShoppingCenter', '@id': `${SITE_URL}/#place`, name: SITE_NAME },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: SITE_NAME, item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: 'Marketplace', item: `${SITE_URL}/#marketplace` },
+          { '@type': 'ListItem', position: 3, name: s.name, item: `${SITE_URL}/shops/${s.id}` },
+        ],
       },
     ],
   };

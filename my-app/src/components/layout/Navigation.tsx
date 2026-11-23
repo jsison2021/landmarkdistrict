@@ -12,11 +12,6 @@ const LINKS = [
 
 const SECTION_IDS = ['hero', 'marketplace', 'residences', 'location', 'contact'];
 
-function smoothTo(id: string) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-}
-
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('hero');
@@ -33,8 +28,9 @@ export default function Navigation() {
       let under: HTMLElement | null = null;
       for (const id of SECTION_IDS) {
         const s = document.getElementById(id);
-        if (!s) continue;
-        if (s.offsetTop <= mid) cur = id;
+        if (s && s.offsetTop <= mid) cur = id;
+      }
+      for (const s of document.querySelectorAll<HTMLElement>('main section[data-theme]')) {
         if (s.offsetTop <= navLine) under = s;
       }
       setActive(cur);
@@ -66,10 +62,13 @@ export default function Navigation() {
     };
   }, [open]);
 
+  // On the homepage, scroll smoothly; on other pages the /#id href navigates home.
   const go = (id: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
     setOpen(false);
-    smoothTo(id);
+    const el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -79,7 +78,7 @@ export default function Navigation() {
       aria-label="Primary"
     >
       <div className="nav-bar">
-        <a className="nav-brand" href="#hero" onClick={go('hero')}>
+        <a className="nav-brand" href="/#hero" onClick={go('hero')}>
           <img src="/assets/tenant-logos/logo.webp" alt="" className="nav-logo" width="20" height="30" />
           <span className="nav-wordmark">
             <span className="nav-prefix">Shops at</span>
@@ -91,7 +90,7 @@ export default function Navigation() {
             <a
               key={l.id}
               className={`nav-link${active === l.id ? ' active' : ''}`}
-              href={`#${l.id}`}
+              href={`/#${l.id}`}
               aria-current={active === l.id ? 'true' : undefined}
               onClick={go(l.id)}
             >
@@ -99,7 +98,7 @@ export default function Navigation() {
             </a>
           ))}
         </div>
-        <a className="nav-cta" href="#contact" onClick={go('contact')}>
+        <a className="nav-cta" href="/#contact" onClick={go('contact')}>
           Leasing <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.75} />
         </a>
         <button
@@ -118,7 +117,7 @@ export default function Navigation() {
         <ol className="nav-sheet-links">
           {LINKS.map((l, i) => (
             <li key={l.id} style={{ '--i': i }}>
-              <a href={`#${l.id}`} onClick={go(l.id)} className={active === l.id ? 'active' : undefined}>
+              <a href={`/#${l.id}`} onClick={go(l.id)} className={active === l.id ? 'active' : undefined}>
                 <span className="nav-sheet-num">{String(i + 1).padStart(2, '0')}</span>
                 {l.label}
               </a>

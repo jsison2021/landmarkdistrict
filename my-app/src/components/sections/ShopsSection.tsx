@@ -1,15 +1,6 @@
+import Link from 'next/link';
 import { ArrowUpRight, Phone } from 'lucide-react';
-import { shops, type ShopCategory } from '@/lib/shops';
-
-const CATS: { id: ShopCategory; label: string }[] = [
-  { id: 'restaurants', label: 'Restaurants' },
-  { id: 'retail',      label: 'Retail' },
-  { id: 'services',    label: 'Services' },
-];
-
-function telHref(phone: string) {
-  return 'tel:' + phone.replace(/[^0-9]/g, '');
-}
+import { CATEGORIES as CATS, shopPath, shops, telHref } from '@/lib/shops';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -60,7 +51,7 @@ export default function ShopsSection() {
                     data-reveal=""
                     style={{ '--d': `${(i % 3) * 0.06}s` }}
                   >
-                    <div className="shop-plate">
+                    <Link href={shopPath(s)} className="shop-plate shop-plate-link" tabIndex={-1} aria-hidden="true">
                       <img
                         className="shop-logo"
                         src={s.logo}
@@ -69,9 +60,9 @@ export default function ShopsSection() {
                         decoding="async"
                       />
                       <span className="shop-idx">№ {pad(i + 1)}</span>
-                    </div>
+                    </Link>
                     <div className="shop-body">
-                      <h4 className="shop-name">{s.name}</h4>
+                      <h4 className="shop-name"><Link href={shopPath(s)}>{s.name}</Link></h4>
                       <p className="shop-addr">{s.address}</p>
                       <div className="shop-links">
                         {s.website && (
