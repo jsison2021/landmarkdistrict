@@ -339,13 +339,6 @@ h1 em, h2 em, .res-hero-line em {
   font-style: italic;
   color: var(--c-brick);
 }
-.intro-year {
-  font-size: clamp(40px, 7vw, 104px);
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-  color: var(--c-brass);
-  font-variant-numeric: tabular-nums;
-}
 .intro-mark {
   align-self: end;
   display: flex;
