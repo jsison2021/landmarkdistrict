@@ -46,7 +46,7 @@ export default async function TenantPage({ params }: Props) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1}>
         <section className="tenant-hero" data-theme="dark">
           <div className="tenant-hero-inner">
             <nav className="tenant-crumbs" aria-label="Breadcrumb">
@@ -62,7 +62,7 @@ export default async function TenantPage({ params }: Props) {
                 <p className="tenant-addr">{shop.address}</p>
                 <div className="tenant-actions">
                   <a className="btn btn-primary" href={directionsUrl(shop)} target="_blank" rel="noopener noreferrer">
-                    Get directions <MapPin aria-hidden="true" size={18} strokeWidth={1.75} />
+                    Get directions<span className="sr-only"> (opens in a new tab)</span> <MapPin aria-hidden="true" size={18} strokeWidth={1.75} />
                   </a>
                   {shop.phone && (
                     <a className="btn btn-ghost" href={telHref(shop.phone)}>
@@ -84,7 +84,7 @@ export default async function TenantPage({ params }: Props) {
               <div>
                 <dt>Address</dt>
                 <dd>
-                  <a href={directionsUrl(shop)} target="_blank" rel="noopener noreferrer">{shop.address}</a>
+                  <a href={directionsUrl(shop)} target="_blank" rel="noopener noreferrer">{shop.address}<span className="sr-only"> (opens in a new tab)</span></a>
                 </dd>
               </div>
               {shop.phone && (
@@ -98,7 +98,7 @@ export default async function TenantPage({ params }: Props) {
                   <dt>Website</dt>
                   <dd>
                     <a href={shop.website} target="_blank" rel="noopener noreferrer">
-                      {websiteLabel(shop.website)} <ArrowUpRight aria-hidden="true" size={15} strokeWidth={1.75} />
+                      {websiteLabel(shop.website)}<span className="sr-only"> (opens in a new tab)</span> <ArrowUpRight aria-hidden="true" size={15} strokeWidth={1.75} />
                     </a>
                   </dd>
                 </div>

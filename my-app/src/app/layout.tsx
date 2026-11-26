@@ -45,7 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${display.variable} ${italic.variable} ${body.variable} ${mono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <a className="skip-link" href="#main">Skip to main content</a>
+        {children}
+      </body>
     </html>
   );
 }

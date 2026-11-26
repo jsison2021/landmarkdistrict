@@ -141,7 +141,7 @@ export default function LocationSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Open in Google Maps <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.75} />
+            Open in Google Maps<span className="sr-only"> (opens in a new tab)</span> <ArrowUpRight aria-hidden="true" size={18} strokeWidth={1.75} />
           </a>
         </div>
         <div className="location-map-wrap" data-reveal="fade">

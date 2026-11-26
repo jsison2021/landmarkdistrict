@@ -19,7 +19,7 @@ export default function Home() {
       <div className="scroll-progress" id="scroll-progress" aria-hidden="true" />
       <LogoIntro />
       <Navigation />
-      <main>
+      <main id="main" tabIndex={-1}>
         <HeroSection />
         <ShopsSection />
         <ResidencesSection />

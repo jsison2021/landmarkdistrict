@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 
 const LINKS = [
@@ -17,6 +17,8 @@ export default function Navigation() {
   const [active, setActive] = useState('hero');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const sheetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -53,9 +55,16 @@ export default function Navigation() {
     const mq = window.matchMedia('(min-width: 901px)');
     const onMq = () => { if (mq.matches) setOpen(false); };
     document.documentElement.classList.add('menu-open');
+    // Keep keyboard and screen reader focus inside the open menu.
+    const behind = [...document.querySelectorAll<HTMLElement>('main, footer')];
+    behind.forEach((el) => el.setAttribute('inert', ''));
+    sheetRef.current?.querySelector<HTMLElement>('a')?.focus();
     window.addEventListener('keydown', onKey);
     mq.addEventListener('change', onMq);
+    const toggle = toggleRef.current;
     return () => {
+      behind.forEach((el) => el.removeAttribute('inert'));
+      toggle?.focus();
       document.documentElement.classList.remove('menu-open');
       window.removeEventListener('keydown', onKey);
       mq.removeEventListener('change', onMq);
@@ -102,6 +111,7 @@ export default function Navigation() {
           Leasing <ArrowUpRight aria-hidden="true" size={16} strokeWidth={1.75} />
         </a>
         <button
+          ref={toggleRef}
           type="button"
           className="nav-toggle"
           aria-expanded={open}
@@ -113,7 +123,7 @@ export default function Navigation() {
         </button>
       </div>
 
-      <div id="nav-sheet" className="nav-sheet" hidden={!open}>
+      <div id="nav-sheet" ref={sheetRef} className="nav-sheet" hidden={!open}>
         <ol className="nav-sheet-links">
           {LINKS.map((l, i) => (
             <li key={l.id} style={{ '--i': i }}>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState } from 'react';
+import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 import { joinResidencesList, type FormState } from '@/app/actions';
 
@@ -51,8 +52,13 @@ export default function ResidencesSection() {
               {state.status === 'error' && (
                 <div className="form-error" role="alert">{state.message}</div>
               )}
+              <p className="form-note">
+                We&apos;ll only email you about the residences, and you can opt out anytime. See our{' '}
+                <Link href="/privacy">Privacy Policy</Link>.
+              </p>
             </>
           )}
+          <p className="res-eho">Equal Housing Opportunity</p>
         </div>
 
         <aside className="res-sheet" data-reveal style={{ '--d': '0.1s' }} aria-label="About the residences">

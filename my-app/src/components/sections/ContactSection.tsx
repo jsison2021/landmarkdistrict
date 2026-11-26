@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState } from 'react';
+import Link from 'next/link';
 import { ArrowRight, Check, Phone } from 'lucide-react';
 import { submitContact, type FormState } from '@/app/actions';
 
@@ -66,6 +67,9 @@ export default function ContactSection() {
               {pending ? 'Sending…' : 'Send inquiry'}
               {!pending && <ArrowRight aria-hidden="true" size={18} strokeWidth={1.75} />}
             </button>
+            <p className="form-note">
+              We use your details only to reply to you. See our <Link href="/privacy">Privacy Policy</Link>.
+            </p>
           </form>
         )}
       </div>
