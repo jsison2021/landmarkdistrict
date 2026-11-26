@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ArrowUpRight, Phone } from 'lucide-react';
-import { CATEGORIES as CATS, shopPath, shops, telHref } from '@/lib/shops';
+import { ArrowUpRight, MapPin, Phone } from 'lucide-react';
+import { CATEGORIES as CATS, directionsUrl, shopPath, shops, telHref } from '@/lib/shops';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -73,6 +73,11 @@ export default function ShopsSection() {
                         {s.phone && (
                           <a href={telHref(s.phone)} aria-label={`Call ${s.name} at ${s.phone}`}>
                             Call <Phone aria-hidden="true" size={14} strokeWidth={1.75} />
+                          </a>
+                        )}
+                        {!s.website && !s.phone && (
+                          <a href={directionsUrl(s)} target="_blank" rel="noopener noreferrer" aria-label={`Directions to ${s.name} (opens in a new tab)`}>
+                            Directions <MapPin aria-hidden="true" size={14} strokeWidth={1.75} />
                           </a>
                         )}
                       </div>

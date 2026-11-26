@@ -10,12 +10,10 @@
       "category": "restaurants"
     },
     {
-      "id": "fleur-de-tea",
-      "name": "Fleur De Tea",
-      "logo": "/assets/tenant-logos/flurdetea.webp",
+      "id": "cafecito",
+      "name": "Cafecito",
+      "logo": "/assets/tenant-logos/cafecito.webp",
       "address": "1212 S 4th St 100, Louisville, KY 40203",
-      "website": "https://www.facebook.com/fleurdetea/",
-      "phone": "(502) 742-9561",
       "category": "restaurants"
     },
     {

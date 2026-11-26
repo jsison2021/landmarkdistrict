@@ -23,7 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!shop) return {};
   const where = streetOf(shop.address) ?? 'Shops at Landmark District';
   const title = `${shop.name} | ${SITE_NAME}, Old Louisville`;
-  const description = `${shop.name} is ${categoryOf(shop.category).noun} at ${where} in Old Louisville, part of ${SITE_NAME} at 4th & Oak. Address, phone, website and directions.`;
+  const details = ['Address', shop.phone && 'phone', shop.website && 'website'].filter(Boolean).join(', ');
+  const description = `${shop.name} is ${categoryOf(shop.category).noun} at ${where} in Old Louisville, part of ${SITE_NAME} at 4th & Oak. ${details} and directions.`;
   return {
     title,
     description,
