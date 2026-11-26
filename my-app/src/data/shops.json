@@ -28,12 +28,12 @@
       "category": "restaurants"
     },
     {
-      "id": "southern-express",
-      "name": "Southern Express",
-      "logo": "/assets/tenant-logos/southernexpress.webp",
+      "id": "eatz-vietnamese",
+      "name": "Eatz Vietnamese Restaurant",
+      "logo": "/assets/tenant-logos/eatz.webp",
       "address": "418 W Oak St, Louisville, KY 40203",
-      "website": "https://www.facebook.com/1DOLLARJUST1DOLLAR/",
-      "phone": "(502) 963-1719",
+      "website": "https://www.eatzvietnameseky.com/",
+      "phone": "(502) 785-4450",
       "category": "restaurants"
     },
     {
